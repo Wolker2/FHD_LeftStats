@@ -1,0 +1,22 @@
+FHD_LeftStats 0.5 — 2026-10-16
+
+New regression tests BEFORE fix (0.4):
+FAIL draw order: FHD_LeftStatsPanel Z10 painted before BGBuf Z9.
+FAIL first entry: previous mode=False, guard=False, cargo=False.
+These match the missing left panel and first-open cargo failure reported.
+
+AFTER fix (0.5), original EXE SHA256 guarded native probes:
+PASS root order: BGBuf -> FHD_LeftStatsPanel -> equipment/cargo subtree.
+PASS Rus and Eng entry guards:
+  open1: mode=False, guard=True -> cargo=True, stats=True
+  open2: mode=True, guard=False -> cargo=True, stats=True
+  open3: mode=True, guard=False -> cargo=True, stats=True
+PASS item-update reentry preserves cargo mode.
+PASS original native cargo switch preserves stats=True / cargo=True.
+PASS full 328x598 frame bounds at 1920x1080, origin (355,208).
+PASS CFG/DAT roundtrips, mirrored artwork and control alignment.
+PASS unique native bindings; unchanged cargo and equipment geometry.
+
+Native probes execute original machine instructions for specific functions,
+with test UI methods and a callback guard evaluator. Full game rendering,
+RScript execution, input and other UI contexts remain unverified.

@@ -1,0 +1,26 @@
+FHD_LeftStats ^{
+    BothPanels=Character statistics and cargo hold are both open
+}
+ShipInfo ^{
+    AddInfo ^{
+        CustomInfos ^{
+            FHD_LeftStats_01 ^{
+                Name=
+                Description=
+                Icon=0
+                OnActCodeTypes=t_OnEnteringForm,t_OnReEnteringForm,t_OnLeavingForm
+                OnActCode ~{
+                    01=if(CurrentForm() != 'Ship') exit;
+                    02=if(ScriptItemActionType(t_OnLeavingForm))
+                    03 ~{
+                        01=InterfaceState('Ship','FHD_LeftStatsPanel',-1);
+                        02=exit;
+                    }
+                    04=if(FormCurShip() != Player()) exit;
+                    05=if(UICheckElement('Ship','PanelRight','IsActive')) ButtonClick('Ship','ToRH');
+                    06=InterfaceState('Ship','FHD_LeftStatsPanel',1);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,3370 @@
+ML ^{
+    Ship ^{
+        Border=0,0,1024,768
+        Panel ^{
+            GraphBuf ^{
+                Name=BGBuf
+                Pos=0,0,9
+                Size=1024,768
+            }
+            GraphButton ^{
+                Help=FormShip.HelpDestrInto
+                ImageDown=GI,Bm.FormShip2.IntoD
+                ImageNormal=GI,Bm.FormShip2.IntoN
+                ImageNormalA=GI,Bm.FormShip2.IntoA
+                Kind=Normal
+                KindHit=Rect
+                Name=CustomBridgeInto
+                Pos=385,420,-1
+                Size=61,35
+                Style=Style.GB.SoundNormal
+            }
+            Image ^{
+                Image=GI,Bm.PanelMain2.2WarningMoney
+                Name=ADD_WarningMoney
+                Pos=622,739,-105
+                Size=98,24
+            }
+            Label ^{
+                AlignX=Center
+                AlignY=CenterEx
+                Font=Font.2Ranger
+                Help=Help.LabelMoney
+                Name=ADD_Money
+                Pos=624,739,-105
+                Size=95,22
+                TextColor=55,230,255
+            }
+            MoveWorld=False
+            Name=MainPanel
+            Panel ^{
+                Name=PanelMain
+                Panel ^{
+                    Active=False
+                    MVUpdate=True
+                    MouseBlocking=True
+                    Name=PM_PanelMsg
+                    Pos=111,741,2
+                    Size=362,26
+                }
+                Panel ^{
+                    GraphButton ^{
+                        Help=Help.ButShip
+                        ImageDisable=GI,Bm.PanelMain2.2ShipH
+                        ImageDown=GI,Bm.PanelMain2.2ShipD
+                        ImageNormal=GI,Bm.PanelMain2.2ShipN
+                        ImageNormalA=GI,Bm.PanelMain2.2ShipA
+                        Kind=Disable
+                        KindHit=Graph
+                        Name=PM_Ship
+                        Pos=755,9,8
+                        Size=46,33
+                        Style=Style.GB.SoundNormal
+                    }
+                    GraphButton ^{
+                        Help=Help.ButGalaxy
+                        ImageDisable=GI,Bm.PanelMain2.2GalH
+                        ImageDown=GI,Bm.PanelMain2.2GalD
+                        ImageNormal=GI,Bm.PanelMain2.2GalN
+                        ImageNormalA=GI,Bm.PanelMain2.2GalA
+                        Kind=Disable
+                        KindHit=Graph
+                        Name=PM_Gal
+                        Pos=843,9,8
+                        Size=49,33
+                        Style=Style.GB.SoundNormal
+                    }
+                    GraphButton ^{
+                        Help=Help.ButRating
+                        ImageDisable=GI,Bm.PanelMain2.2RatingH
+                        ImageDown=GI,Bm.PanelMain2.2RatingD
+                        ImageNormal=GI,Bm.PanelMain2.2RatingN
+                        ImageNormalA=GI,Bm.PanelMain2.2RatingA
+                        Kind=Disable
+                        KindHit=Graph
+                        Name=PM_Quest
+                        Pos=799,9,8
+                        Size=47,33
+                        Style=Style.GB.SoundNormal
+                    }
+                    GraphButton ^{
+                        Auto=Pos,Size
+                        Help=Help.ButTurn
+                        ImageDisable=GI,Bm.PanelMain2.2TurnD
+                        ImageDown=GI,Bm.PanelMain2.2TurnD
+                        ImageNormal=GI,Bm.PanelMain2.2TurnN
+                        ImageNormalA=GI,Bm.PanelMain2.2TurnA
+                        Kind=Disable
+                        KindHit=Rect
+                        Name=PM_EndTurn
+                        PosZ=8
+                        Style=Style.GB.SoundNormal
+                    }
+                    GraphButton ^{
+                        Active=True
+                        Auto=Pos,Size
+                        Help=Help.ButBreakMove
+                        ImageDisable=GI,Bm.PanelMain2.2StopD
+                        ImageDown=GI,Bm.PanelMain2.2StopD
+                        ImageNormal=GI,Bm.PanelMain2.2StopN
+                        ImageNormalA=GI,Bm.PanelMain2.2StopA
+                        Kind=Disable
+                        KindHit=Rect
+                        Name=PM_Break
+                        PosZ=8
+                        Style=Style.GB.SoundNormal
+                    }
+                    GraphButton ^{
+                        Auto=Pos,Size
+                        Help=Help.ButLogo
+                        ImageDisable=GI,Bm.PanelMain2.2MenuN
+                        ImageDown=GI,Bm.PanelMain2.2MenuD
+                        ImageNormal=GI,Bm.PanelMain2.2MenuN
+                        ImageNormalA=GI,Bm.PanelMain2.2MenuA
+                        Kind=Disable
+                        KindHit=Graph
+                        Name=PM_Logo
+                        PosZ=8
+                        Style=Style.GB.SoundNormal
+                    }
+                    Image ^{
+                        Auto=Pos,Size
+                        Image=GI,Bm.PanelMain2.2BG
+                        Name=PM_ImageBG
+                        PosZ=9
+                    }
+                    Image ^{
+                        Image=GI,Bm.PanelMain2.2WarningSpace
+                        Name=PM_WarningSpace
+                        Pos=498,53,8
+                        Size=89,24
+                    }
+                    Image ^{
+                        Image=GI,Bm.PanelMain2.2WarningMoney
+                        Name=PM_WarningMoney
+                        Pos=622,53,8
+                        Size=98,24
+                    }
+                    Label ^{
+                        AlignX=Center
+                        AlignY=CenterEx
+                        Font=Font.2SmallBold
+                        Help=Help.LabelMoney
+                        Name=PM_Money
+                        Pos=624,55,7
+                        Size=95,22
+                        TextColor=200,240,255
+                    }
+                    Label ^{
+                        AlignX=Center
+                        AlignY=CenterEx
+                        Font=Font.2SmallBold
+                        Help=Help.LabelFreeSpace
+                        Name=PM_FreeSpace
+                        Pos=507,55,7
+                        Size=70,22
+                        TextColor=200,240,255
+                    }
+                    Label ^{
+                        Active=False
+                        AlignX=Center
+                        AlignY=CenterEx
+                        Font=Font.2SmallBold
+                        Name=PM_Help
+                        Pos=100,55,8
+                        Size=360,22
+                        TextColor=200,240,255
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.PanelMain2.2DateNext
+                            Name=PM_DateNextImage
+                            Pos=0,5,8
+                            Size=7,17
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2SmallBold
+                            Help=Help.LabelDate
+                            Name=PM_Date
+                            Pos=0,0,8
+                            Size=130,22
+                            TextColor=200,240,255
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2SmallBold
+                            Help=Help.LabelDate
+                            Name=PM_DateNew
+                            Pos=0,0,8
+                            Size=130,22
+                            TextColor=200,240,255
+                        }
+                        Name=PM_PanelDate
+                        Pos=738,55,7
+                        Size=130,22
+                    }
+                    Pos=0,686,3
+                    Size=1024,82
+                }
+                Pos=0,0,-100
+                Size=1024,768
+                Window ^{
+                    Active=False
+                    Label ^{
+                        Active=True
+                        AlignX=Auto
+                        AlignY=Auto
+                        Font=Font.2Normal
+                        Name=PM_LabelMsg
+                        Pos=0,0,1
+                        Size=500,20
+                        TextColor=255,255,230
+                        WordWrap=True
+                    }
+                    Name=PM_WinMsg
+                    Pos=57,725,1
+                    Size=500,20
+                    Style=Style.Window.2Tips
+                }
+            }
+            Panel ^{
+                Panel ^{
+                    GAI ^{
+                        FrameLoad=0
+                        Image=Bm.FormShip2.2ActivateAnim
+                        Name=UseAnim
+                        Pos=45,26,4
+                        Size=52,52
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormShip2.2Use
+                        Name=UseImage
+                        Pos=0,0
+                        Size=139,92
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormShip2.2UseLeft
+                        Name=UseLeft
+                        Pos=47,28,3
+                        Size=27,48
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormShip2.2UseRight
+                        Name=UseRight
+                        Pos=69,28,3
+                        Size=27,48
+                    }
+                    Label ^{
+                        AlignX=Center
+                        AlignY=CenterEx
+                        Font=Font.2Ranger
+                        Pos=-69,-5,-1
+                        Size=250,40
+                        Text=FormShip.LActivate
+                        TextColor=0,26,49
+                        TextShadow=1
+                        TextShadowColor=0,135,192
+                        WordWrap=True
+                    }
+                    Name=UsePanel
+                    Pos=0,302,2
+                    Size=139,92
+                    Zone ^{
+                        Name=UseZone
+                        Pos=5,4
+                        Size=101,82
+                    }
+                }
+                Panel ^{
+                    Image ^{
+                        Image=GI,Bm.FormShip2.2Zaglushka
+                        Pos=97,519,5
+                        Size=67,69
+                    }
+                    Panel ^{
+                        GAI ^{
+                            FrameLoad=0
+                            Image=Bm.FormShip2.2CenterNormalAnim
+                            Name=CenterNormalAnim
+                            PBuf=True
+                            Pos=58,176,3
+                            Size=334,249
+                        }
+                        GAI ^{
+                            FrameLoad=0
+                            Image=Bm.FormShip2.2CenterDamageAnim
+                            Name=CenterDamageAnim
+                            PBuf=True
+                            Pos=60,177,3
+                            Size=334,249
+                        }
+                        GAI ^{
+                            FrameLoad=0
+                            Image=Bm.FormShip2.2TrashAnim
+                            Name=GateAnim
+                            Pos=32,545,4
+                            Size=52,52
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=HullRepair
+                            Pos=169,237,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_Engine_0anim
+                            Pos=44,209,-1
+                            Size=99,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_Engine_0Repair
+                            Pos=44,209,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_FuelTanks_0anim
+                            Pos=44,316,-1
+                            Size=99,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_FuelTanks_0Repair
+                            Pos=44,316,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_RepairRobot_0anim
+                            Pos=83,420,-1
+                            Size=97,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_RepairRobot_0Repair
+                            Pos=83,420,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_CargoHook_0anim
+                            Pos=182,420,-1
+                            Size=95,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_CargoHook_0Repair
+                            Pos=182,420,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_DefGenerator_0anim
+                            Pos=276,420,-1
+                            Size=100,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_DefGenerator_0Repair
+                            Pos=276,420,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_Radar_0anim
+                            Pos=317,316,-1
+                            Size=99,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_Radar_0Repair
+                            Pos=317,316,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_Scaner_0anim
+                            Pos=317,209,-1
+                            Size=99,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_Scaner_0Repair
+                            Pos=317,209,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_Weapon_0anim
+                            Pos=83,107,-1
+                            Size=97,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_Weapon_0Repair
+                            Pos=83,107,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_Weapon_1anim
+                            Pos=182,107,-1
+                            Size=95,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_Weapon_1Repair
+                            Pos=182,107,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_Weapon_2anim
+                            Pos=276,107,-1
+                            Size=100,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_Weapon_2Repair
+                            Pos=276,107,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_Weapon_3anim
+                            Pos=135,26,-1
+                            Size=92,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_Weapon_3Repair
+                            Pos=135,26,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Name=S_Weapon_4anim
+                            Pos=232,26,-1
+                            Size=93,77
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=S_Weapon_4Repair
+                            Pos=232,26,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=Art0Repair
+                            Pos=4,388,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=Art1Repair
+                            Pos=370,388,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=Art2Repair
+                            Pos=3,126,-4
+                            Size=48,48
+                        }
+                        GAI ^{
+                            Active=True
+                            FrameLoad=0
+                            Image=Bm.FormHangar2.2Repair
+                            Name=Art3Repair
+                            Pos=374,126,-4
+                            Size=48,48
+                        }
+                        GraphBuf ^{
+                            Name=Ship3DBuf
+                            Pos=124,194,1
+                            Size=210,210
+                        }
+                        GraphButton ^{
+                            Caption=1
+                            CaptionColorDisable=0,24,41
+                            CaptionColorDisableA=0,24,41
+                            CaptionColorDown=0,24,41
+                            CaptionColorDownA=0,24,41
+                            CaptionColorNormal=0,24,41
+                            CaptionColorNormalA=0,24,41
+                            CaptionSme=0,-6,0,-6
+                            Font=Font.2Ranger
+                            ImageDisable=GI,Bm.FormShip2.2Compl1A
+                            ImageDown=GI,Bm.FormShip2.2Compl1S
+                            ImageDownA=GI,Bm.FormShip2.2Compl1A
+                            ImageNormal=GI,Bm.FormShip2.2Compl1N
+                            ImageNormalA=GI,Bm.FormShip2.2Compl1A
+                            Kind=FixDisable
+                            KindHit=Graph
+                            Name=Compl0
+                            Pos=239,0,1
+                            Size=29,26
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Caption=2
+                            CaptionColorDisable=0,24,41
+                            CaptionColorDisableA=0,24,41
+                            CaptionColorDown=0,24,41
+                            CaptionColorDownA=0,24,41
+                            CaptionColorNormal=0,24,41
+                            CaptionColorNormalA=0,24,41
+                            CaptionSme=0,-6,0,-6
+                            Font=Font.2Ranger
+                            ImageDisable=GI,Bm.FormShip2.2Compl2A
+                            ImageDown=GI,Bm.FormShip2.2Compl2S
+                            ImageDownA=GI,Bm.FormShip2.2Compl2A
+                            ImageNormal=GI,Bm.FormShip2.2Compl2N
+                            ImageNormalA=GI,Bm.FormShip2.2Compl2A
+                            Kind=FixDisable
+                            KindHit=Graph
+                            Name=Compl1
+                            Pos=260,0,1
+                            Size=28,26
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Caption=3
+                            CaptionColorDisable=0,24,41
+                            CaptionColorDisableA=0,24,41
+                            CaptionColorDown=0,24,41
+                            CaptionColorDownA=0,24,41
+                            CaptionColorNormal=0,24,41
+                            CaptionColorNormalA=0,24,41
+                            CaptionSme=0,-6,0,-6
+                            Font=Font.2Ranger
+                            ImageDisable=GI,Bm.FormShip2.2Compl3A
+                            ImageDown=GI,Bm.FormShip2.2Compl3S
+                            ImageDownA=GI,Bm.FormShip2.2Compl3A
+                            ImageNormal=GI,Bm.FormShip2.2Compl3N
+                            ImageNormalA=GI,Bm.FormShip2.2Compl3A
+                            Kind=FixDisable
+                            KindHit=Graph
+                            Name=Compl2
+                            Pos=280,1,1
+                            Size=29,25
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpLoadRocketsInSlots
+                            ImageDown=GI,Bm.FormShip2.LoadRocketsInSlotsD
+                            ImageNormal=GI,Bm.FormShip2.LoadRocketsInSlotsN
+                            ImageNormalA=GI,Bm.FormShip2.LoadRocketsInSlotsA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=LoadRocketsInSlots
+                            Pos=21,108,1
+                            Size=55,31
+                            Style=Style.GB.SoundNormal
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2CenterNormalImage
+                            Name=CenterNormalImage
+                            Pos=60,176,4
+                            Size=334,249
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2CenterDamageImage
+                            Name=CenterDamageImage
+                            Pos=60,176,4
+                            Size=334,249
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2GateLeft
+                            Name=GateLeft
+                            Pos=34,547,3
+                            Size=27,48
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2GateRight
+                            Name=GateRight
+                            Pos=56,547,3
+                            Size=27,48
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2LeftShort
+                            Name=PanelLeft
+                            Pos=0,0,2
+                            Size=460,617
+                        }
+                        Image ^{
+                            Name=Ship3D
+                            Pos=124,194,1
+                            Size=210,210
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2HullA
+                            Name=HullA
+                            Pos=142,212,0
+                            Size=175,175
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2HullEx
+                            Name=HullEx
+                            Pos=142,212,0
+                            Size=175,175
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=HullSet
+                            Pos=209,348,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2EngineN
+                            Name=S_Engine_0n
+                            Pos=44,209,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2EngineA
+                            Name=S_Engine_0a
+                            Pos=44,209,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2EngineR
+                            Name=S_Engine_0b
+                            Pos=44,209,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2EngineEx
+                            Name=S_Engine_0Ex
+                            Pos=44,209,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Name=S_Engine_0i
+                            Pos=44,209,0
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2EngineH
+                            Name=S_Engine_0off
+                            Pos=44,209,-1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_Engine_0Set
+                            Pos=49,246,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2FuelN
+                            Name=S_FuelTanks_0n
+                            Pos=44,316,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2FuelA
+                            Name=S_FuelTanks_0a
+                            Pos=44,316,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2FuelR
+                            Name=S_FuelTanks_0b
+                            Pos=44,316,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2FuelEx
+                            Name=S_FuelTanks_0Ex
+                            Pos=44,316,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Name=S_FuelTanks_0i
+                            Pos=44,316,0
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2FuelH
+                            Name=S_FuelTanks_0off
+                            Pos=44,316,-1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_FuelTanks_0Set
+                            Pos=57,354,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DroidN
+                            Name=S_RepairRobot_0n
+                            Pos=83,420,1
+                            Size=97,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DroidA
+                            Name=S_RepairRobot_0a
+                            Pos=83,420,1
+                            Size=97,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DroidR
+                            Name=S_RepairRobot_0b
+                            Pos=83,420,1
+                            Size=97,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DroidEx
+                            Name=S_RepairRobot_0Ex
+                            Pos=83,420,1
+                            Size=97,77
+                        }
+                        Image ^{
+                            Name=S_RepairRobot_0i
+                            Pos=83,420,0
+                            Size=97,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DroidH
+                            Name=S_RepairRobot_0off
+                            Pos=83,420,-1
+                            Size=97,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_RepairRobot_0Set
+                            Pos=89,457,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2HookN
+                            Name=S_CargoHook_0n
+                            Pos=182,420,1
+                            Size=95,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2HookA
+                            Name=S_CargoHook_0a
+                            Pos=182,420,1
+                            Size=95,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2HookR
+                            Name=S_CargoHook_0b
+                            Pos=182,420,1
+                            Size=95,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2HookEx
+                            Name=S_CargoHook_0Ex
+                            Pos=182,420,1
+                            Size=95,77
+                        }
+                        Image ^{
+                            Name=S_CargoHook_0i
+                            Pos=182,420,0
+                            Size=95,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2HookH
+                            Name=S_CargoHook_0off
+                            Pos=182,420,-1
+                            Size=95,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_CargoHook_0Set
+                            Pos=185,457,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2GeneratorN
+                            Name=S_DefGenerator_0n
+                            Pos=276,420,1
+                            Size=100,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2GeneratorA
+                            Name=S_DefGenerator_0a
+                            Pos=276,420,1
+                            Size=100,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2GeneratorR
+                            Name=S_DefGenerator_0b
+                            Pos=276,420,1
+                            Size=100,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2GeneratorEx
+                            Name=S_DefGenerator_0Ex
+                            Pos=276,420,1
+                            Size=100,77
+                        }
+                        Image ^{
+                            Name=S_DefGenerator_0i
+                            Pos=276,420,0
+                            Size=100,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2GeneratorH
+                            Name=S_DefGenerator_0off
+                            Pos=276,420,-1
+                            Size=100,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_DefGenerator_0Set
+                            Pos=283,457,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2RadarN
+                            Name=S_Radar_0n
+                            Pos=317,316,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2RadarA
+                            Name=S_Radar_0a
+                            Pos=317,316,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2RadarR
+                            Name=S_Radar_0b
+                            Pos=317,316,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2RadarEx
+                            Name=S_Radar_0Ex
+                            Pos=317,316,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Name=S_Radar_0i
+                            Pos=317,316,0
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2RadarH
+                            Name=S_Radar_0off
+                            Pos=317,316,-1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_Radar_0Set
+                            Pos=322,354,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2ScanerN
+                            Name=S_Scaner_0n
+                            Pos=317,209,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2ScanerA
+                            Name=S_Scaner_0a
+                            Pos=317,209,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2ScanerR
+                            Name=S_Scaner_0b
+                            Pos=317,209,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2ScanerEx
+                            Name=S_Scaner_0Ex
+                            Pos=317,209,1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Name=S_Scaner_0i
+                            Pos=317,209,0
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2ScanerH
+                            Name=S_Scaner_0off
+                            Pos=317,209,-1
+                            Size=99,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_Scaner_0Set
+                            Pos=330,246,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W1N
+                            Name=S_Weapon_0n
+                            Pos=83,107,1
+                            Size=97,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W1A
+                            Name=S_Weapon_0a
+                            Pos=83,107,1
+                            Size=97,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W1R
+                            Name=S_Weapon_0b
+                            Pos=83,107,1
+                            Size=97,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W1Ex
+                            Name=S_Weapon_0Ex
+                            Pos=83,107,1
+                            Size=97,77
+                        }
+                        Image ^{
+                            Name=S_Weapon_0i
+                            Pos=83,107,0
+                            Size=97,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W1H
+                            Name=S_Weapon_0off
+                            Pos=83,107,-1
+                            Size=97,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_Weapon_0Set
+                            Pos=92,145,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W2N
+                            Name=S_Weapon_1n
+                            Pos=182,107,1
+                            Size=95,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W2A
+                            Name=S_Weapon_1a
+                            Pos=182,107,1
+                            Size=95,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W2R
+                            Name=S_Weapon_1b
+                            Pos=182,107,1
+                            Size=95,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W2Ex
+                            Name=S_Weapon_1Ex
+                            Pos=182,107,1
+                            Size=95,77
+                        }
+                        Image ^{
+                            Name=S_Weapon_1i
+                            Pos=182,107,0
+                            Size=95,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W2H
+                            Name=S_Weapon_1off
+                            Pos=182,107,-1
+                            Size=95,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_Weapon_1Set
+                            Pos=186,145,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W3N
+                            Name=S_Weapon_2n
+                            Pos=276,107,1
+                            Size=100,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W3A
+                            Name=S_Weapon_2a
+                            Pos=276,107,1
+                            Size=100,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W3R
+                            Name=S_Weapon_2b
+                            Pos=276,107,1
+                            Size=100,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W3Ex
+                            Name=S_Weapon_2Ex
+                            Pos=276,107,1
+                            Size=100,77
+                        }
+                        Image ^{
+                            Name=S_Weapon_2i
+                            Pos=276,107,0
+                            Size=100,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W3H
+                            Name=S_Weapon_2off
+                            Pos=276,107,-1
+                            Size=100,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_Weapon_2Set
+                            Pos=279,145,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W4N
+                            Name=S_Weapon_3n
+                            Pos=135,26,1
+                            Size=92,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W4A
+                            Name=S_Weapon_3a
+                            Pos=135,26,1
+                            Size=92,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W4R
+                            Name=S_Weapon_3b
+                            Pos=135,26,1
+                            Size=92,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W4Ex
+                            Name=S_Weapon_3Ex
+                            Pos=135,26,1
+                            Size=92,77
+                        }
+                        Image ^{
+                            Name=S_Weapon_3i
+                            Pos=135,26,0
+                            Size=92,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W4H
+                            Name=S_Weapon_3off
+                            Pos=135,26,-1
+                            Size=92,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_Weapon_3Set
+                            Pos=138,63,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W5N
+                            Name=S_Weapon_4n
+                            Pos=232,26,1
+                            Size=93,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W5A
+                            Name=S_Weapon_4a
+                            Pos=232,26,1
+                            Size=93,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W5R
+                            Name=S_Weapon_4b
+                            Pos=232,26,1
+                            Size=93,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W5Ex
+                            Name=S_Weapon_4Ex
+                            Pos=232,26,1
+                            Size=93,77
+                        }
+                        Image ^{
+                            Name=S_Weapon_4i
+                            Pos=232,26,0
+                            Size=93,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2W5H
+                            Name=S_Weapon_4off
+                            Pos=232,26,-1
+                            Size=93,77
+                        }
+                        Image ^{
+                            Image=GI,Bm.Micromoduls.2MM3_Set
+                            Name=S_Weapon_4Set
+                            Pos=236,63,-2
+                            Size=35,36
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art1N
+                            Name=Art0n
+                            Pos=16,412,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art1A
+                            Name=Art0a
+                            Pos=16,412,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art1R
+                            Name=Art0b
+                            Pos=16,412,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art1Ex
+                            Name=Art0Ex
+                            Pos=16,412,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art1H
+                            Name=Art0off
+                            Pos=16,412,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Name=Art0i
+                            Pos=16,412,-2
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art2N
+                            Name=Art1n
+                            Pos=387,412,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art2A
+                            Name=Art1a
+                            Pos=387,412,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art2R
+                            Name=Art1b
+                            Pos=387,412,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art2Ex
+                            Name=Art1Ex
+                            Pos=387,412,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art2H
+                            Name=Art1off
+                            Pos=387,412,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Name=Art1i
+                            Pos=387,412,-2
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art3N
+                            Name=Art2n
+                            Pos=16,146,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art3A
+                            Name=Art2a
+                            Pos=16,146,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art3R
+                            Name=Art2b
+                            Pos=16,146,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art3Ex
+                            Name=Art2Ex
+                            Pos=16,146,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art3H
+                            Name=Art2off
+                            Pos=16,146,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Name=Art2i
+                            Pos=16,146,-2
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art4N
+                            Name=Art3n
+                            Pos=387,146,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art4A
+                            Name=Art3a
+                            Pos=387,146,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art4R
+                            Name=Art3b
+                            Pos=387,146,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art4Ex
+                            Name=Art3Ex
+                            Pos=387,146,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Art4H
+                            Name=Art3off
+                            Pos=387,146,-1
+                            Size=53,43
+                        }
+                        Image ^{
+                            Name=Art3i
+                            Pos=387,146,-2
+                            Size=53,43
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=104,173,0
+                            Size=250,40
+                            Text=FormShip.LWeapon
+                            TextColor=0,26,49
+                            TextShadow=1
+                            TextShadowColor=0,135,192
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Bottom
+                            Font=Font.2Ranger
+                            Pos=-38,260,0
+                            Size=250,40
+                            Text=FormShip.LMove1
+                            TextColor=0,26,49
+                            TextShadow=1
+                            TextShadowColor=0,135,192
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Top
+                            Font=Font.2Ranger
+                            Pos=-38,299,0
+                            Size=250,40
+                            Text=FormShip.LMove2
+                            TextColor=0,26,49
+                            TextShadow=1
+                            TextShadowColor=0,135,192
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Bottom
+                            Font=Font.2Ranger
+                            Pos=255,260,0
+                            Size=250,40
+                            Text=FormShip.LInfo1
+                            TextColor=0,26,49
+                            TextShadow=1
+                            TextShadowColor=0,135,192
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Top
+                            Font=Font.2Ranger
+                            Pos=255,299,0
+                            Size=250,40
+                            Text=FormShip.LInfo2
+                            TextColor=0,26,49
+                            TextShadow=1
+                            TextShadowColor=0,135,192
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=110,486,0
+                            Size=250,40
+                            Text=FormShip.LAdd
+                            TextColor=0,26,49
+                            TextShadow=1
+                            TextShadowColor=0,135,192
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=-73,514,0
+                            Size=250,40
+                            Text=FormShip.LDrop
+                            TextColor=0,26,49
+                            TextShadow=1
+                            TextShadowColor=0,135,192
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=-67,581,0
+                            Size=250,40
+                            Text=FormShip.LGate
+                            TextColor=0,26,49
+                            TextShadow=1
+                            TextShadowColor=0,135,192
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Right
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=-9,-1,0
+                            Size=250,20
+                            Text=FormShip.LCompl
+                            TextColor=0,26,49
+                            TextShadow=1
+                            TextShadowColor=0,135,192
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=354,55,0
+                            Size=82,18
+                            Text=FormShip.IDef
+                            TextColor=45,105,124
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=20,55,0
+                            Size=89,18
+                            Text=FormShip.IEmpty
+                            TextColor=45,105,124
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=20,25,0
+                            Size=89,18
+                            Text=FormShip.IMass
+                            TextColor=45,105,124
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=352,25,0
+                            Size=89,18
+                            Text=FormShip.ISpeed
+                            TextColor=45,105,124
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Name=IDef
+                            Pos=354,73,0
+                            Size=82,18
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Name=IEmpty
+                            Pos=20,73,0
+                            Size=89,18
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Name=IMass
+                            Pos=20,42,0
+                            Size=89,18
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Name=ISpeed
+                            Pos=352,42,0
+                            Size=89,18
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                        }
+                        Name=Left
+                        Panel ^{
+                            GraphButton ^{
+                                ImageDisable=GI,Bm.FormShip2.2ForsageH
+                                ImageDown=GI,Bm.FormShip2.2ForsageD
+                                ImageNormal=GI,Bm.FormShip2.2ForsageN
+                                ImageNormalA=GI,Bm.FormShip2.2ForsageA
+                                Kind=Disable
+                                KindHit=Rect
+                                Name=ForsageBut
+                                Pos=12,9,3
+                                Size=17,17
+                                Style=Style.GB.SoundNormal
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2Forsage
+                                Pos=0,0,5
+                                Size=53,56
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2ForsageLight
+                                Name=ForsageLight
+                                Pos=23,5,4
+                                Size=21,20
+                            }
+                            Name=Forsage
+                            Pos=6,201,-1
+                            Size=53,56
+                        }
+                        Pos=0,0,3
+                        Size=460,650
+                        Zone ^{
+                            Name=GateZone
+                            Pos=7,522
+                            Size=93,89
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_Hull_0z
+                            Pos=142,212,1
+                            Size=175,175
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_Engine_0z
+                            Pos=44,209,0
+                            Size=99,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_FuelTanks_0z
+                            Pos=44,316,0
+                            Size=99,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_RepairRobot_0z
+                            Pos=83,420,0
+                            Size=97,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_CargoHook_0z
+                            Pos=182,420,0
+                            Size=95,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_DefGenerator_0z
+                            Pos=276,420,0
+                            Size=100,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_Radar_0z
+                            Pos=317,316,0
+                            Size=99,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_Scaner_0z
+                            Pos=317,209,0
+                            Size=99,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_Weapon_0z
+                            Pos=83,107,0
+                            Size=97,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_Weapon_1z
+                            Pos=182,107,0
+                            Size=95,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_Weapon_2z
+                            Pos=276,107,0
+                            Size=100,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_Weapon_3z
+                            Pos=135,26,0
+                            Size=92,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_Weapon_4z
+                            Pos=232,26,0
+                            Size=93,77
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=Art0z
+                            Pos=16,412,-2
+                            Size=53,43
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=Art1z
+                            Pos=387,412,-2
+                            Size=53,43
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=Art2z
+                            Pos=16,146,-2
+                            Size=53,43
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=Art3z
+                            Pos=387,146,-2
+                            Size=53,43
+                        }
+                    }
+                    Panel ^{
+                        GraphButton ^{
+                            ImageDisable=GI,Bm.FormShip2.2HoldLeftH
+                            ImageDown=GI,Bm.FormShip2.2HoldLeftD
+                            ImageNormal=GI,Bm.FormShip2.2HoldLeftN
+                            ImageNormalA=GI,Bm.FormShip2.2HoldLeftA
+                            Kind=Disable
+                            KindHit=Graph
+                            Name=S_Left
+                            Pos=30,32,1
+                            Size=21,36
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            ImageDisable=GI,Bm.FormShip2.2HoldRightH
+                            ImageDown=GI,Bm.FormShip2.2HoldRightD
+                            ImageNormal=GI,Bm.FormShip2.2HoldRightN
+                            ImageNormalA=GI,Bm.FormShip2.2HoldRightA
+                            Kind=Disable
+                            KindHit=Graph
+                            Name=S_Right
+                            Pos=314,32,1
+                            Size=20,36
+                            Style=Style.GB.SoundNormal
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Bottom
+                            Pos=0,0,2
+                            Size=351,90
+                        }
+                        Image ^{
+                            Name=S_0f
+                            Pos=55,30,1
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=S_0i
+                            Pos=55,30,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=S_1f
+                            Pos=98,30,1
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=S_1i
+                            Pos=98,30,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=S_2f
+                            Pos=141,30,1
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=S_2i
+                            Pos=141,30,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=S_3f
+                            Pos=184,30,1
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=S_3i
+                            Pos=184,30,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=S_4f
+                            Pos=227,30,1
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=S_4i
+                            Pos=227,30,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=S_5f
+                            Pos=270,30,1
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=S_5i
+                            Pos=270,30,0
+                            Size=39,39
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=56,58,0
+                            Size=250,40
+                            Text=FormShip.LHold
+                            TextColor=0,26,49
+                            TextShadow=1
+                            TextShadowColor=0,135,192
+                            WordWrap=True
+                        }
+                        Name=PanelLH
+                        Pos=109,519,4
+                        Size=351,90
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_0z
+                            Pos=55,30,0
+                            Size=39,39
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_1z
+                            Pos=98,30,0
+                            Size=39,39
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_2z
+                            Pos=141,30,0
+                            Size=39,39
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_3z
+                            Pos=184,30,0
+                            Size=39,39
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_4z
+                            Pos=227,30,0
+                            Size=39,39
+                        }
+                        Zone ^{
+                            Kind=Circle
+                            Name=S_5z
+                            Pos=270,30,0
+                            Size=39,39
+                        }
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DSBg
+                            Pos=0,0,9
+                            Size=351,90
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DSGlow
+                            Name=PDS_Skill0g
+                            Pos=39,28,7
+                            Size=33,33
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DSGlow
+                            Name=PDS_Skill1g
+                            Pos=64,28,7
+                            Size=33,33
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DSGlow
+                            Name=PDS_Skill2g
+                            Pos=89,28,7
+                            Size=33,33
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DSGlow
+                            Name=PDS_Skill3g
+                            Pos=114,28,7
+                            Size=33,33
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DSGlow
+                            Name=PDS_Skill4g
+                            Pos=139,28,7
+                            Size=33,33
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2DSGlow
+                            Name=PDS_Skill5g
+                            Pos=164,28,7
+                            Size=33,33
+                        }
+                        Image ^{
+                            Name=PDS_Skill0i
+                            Pos=45,55,8
+                            Size=21,16
+                        }
+                        Image ^{
+                            Name=PDS_Skill1i
+                            Pos=70,55,8
+                            Size=21,16
+                        }
+                        Image ^{
+                            Name=PDS_Skill2i
+                            Pos=95,55,8
+                            Size=21,16
+                        }
+                        Image ^{
+                            Name=PDS_Skill3i
+                            Pos=120,55,8
+                            Size=21,16
+                        }
+                        Image ^{
+                            Name=PDS_Skill4i
+                            Pos=145,55,8
+                            Size=21,16
+                        }
+                        Image ^{
+                            Name=PDS_Skill5i
+                            Pos=170,55,8
+                            Size=21,16
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Bottom
+                            Font=Font.2Mini
+                            Help=Skills.sAccuracy.Name
+                            Name=PDS_Skill0v
+                            Pos=44,33,1
+                            Size=20,35
+                            TextColor=0,0,0
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Bottom
+                            Font=Font.2Mini
+                            Help=Skills.sMobility.Name
+                            Name=PDS_Skill1v
+                            Pos=69,33,1
+                            Size=20,35
+                            TextColor=0,0,0
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Bottom
+                            Font=Font.2Mini
+                            Help=Skills.sTechnical.Name
+                            Name=PDS_Skill2v
+                            Pos=94,33,1
+                            Size=20,35
+                            TextColor=0,0,0
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Bottom
+                            Font=Font.2Mini
+                            Help=Skills.sTrader.Name
+                            Name=PDS_Skill3v
+                            Pos=119,33,1
+                            Size=20,35
+                            TextColor=0,0,0
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Bottom
+                            Font=Font.2Mini
+                            Help=Skills.sCharm.Name
+                            Name=PDS_Skill4v
+                            Pos=144,33,1
+                            Size=20,35
+                            TextColor=0,0,0
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Bottom
+                            Font=Font.2Mini
+                            Help=Skills.sLeadership.Name
+                            Name=PDS_Skill5v
+                            Pos=169,33,1
+                            Size=20,35
+                            TextColor=0,0,0
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Top
+                            Font=Font.2Ranger
+                            Name=LNewExp1
+                            Pos=191,47,1
+                            Size=65,20
+                            Text=FormShip.LNewExp1
+                            TextColor=41,101,123
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=Top
+                            Font=Font.2Ranger
+                            Name=LNewExp2
+                            Pos=191,57,1
+                            Size=65,20
+                            Text=FormShip.LNewExp2
+                            TextColor=41,101,123
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Normal
+                            Name=PDS_Exp
+                            Pos=253,42,1
+                            Size=65,20
+                            TextColor=0,0,0
+                        }
+                        Name=PanelDS
+                        Pos=109,519,4
+                        Size=351,90
+                    }
+                    Pos=100,0,1
+                    Size=460,650
+                }
+                Panel ^{
+                    Panel ^{
+                        GraphButton ^{
+                            Help=FormShip.HelpDestrInto
+                            ImageDown=GI,Bm.FormShip2.IntoD
+                            ImageNormal=GI,Bm.FormShip2.IntoN
+                            ImageNormalA=GI,Bm.FormShip2.IntoA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=DestrInto
+                            Pos=29,363,-1
+                            Size=61,35
+                            Style=Style.GB.SoundNormal
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.DestrPanel
+                            Pos=0,0,1
+                            Size=126,399
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=17,45,0
+                            Size=89,18
+                            Style=Style.Label.2Normal
+                            Text=FormShip.DestrLabel
+                            TextColor=0,0,0
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Small
+                            Name=IDestrEnergy
+                            Pos=48,94,0
+                            Size=52,31
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Small
+                            Name=IDestrShields
+                            Pos=48,150,0
+                            Size=52,31
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Small
+                            Name=IDestrCount
+                            Pos=48,202,0
+                            Size=52,32
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Small
+                            Name=IDestrEnergyOut
+                            Pos=48,257,0
+                            Size=50,33
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Small
+                            Name=IDestrEnergyIn
+                            Pos=49,320,0
+                            Size=50,33
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                            WordWrap=True
+                        }
+                        Name=PanelDestr
+                        Pos=714,108
+                        Size=126,399
+                    }
+                    Panel ^{
+                        GAI ^{
+                            KindX=Center
+                            KindY=Center
+                            Name=CaptainA
+                            PBuf=True
+                            Pos=89,40,4
+                            Size=99,110
+                            TransColor=255,0,255
+                        }
+                        GraphBuf ^{
+                            Name=RewardsImg
+                            Pos=92,150,-1
+                            Size=190,22
+                        }
+                        GraphButton ^{
+                            ImageDown=GI,Bm.FormShip2.2CloseD
+                            ImageNormal=GI,Bm.FormShip2.2CloseN
+                            ImageNormalA=GI,Bm.FormShip2.2CloseA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=Exit
+                            Pos=206,560,1
+                            Size=68,39
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.OpenHold
+                            ImageDown=GI,Bm.FormShip2.2RHOpenD
+                            ImageNormal=GI,Bm.FormShip2.2RHOpenN
+                            ImageNormalA=GI,Bm.FormShip2.2RHOpenA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=ToRH
+                            Pos=125,561,-1
+                            Size=69,37
+                            Style=Style.GB.SoundNormal
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2Right
+                            Name=RightOpen
+                            Pos=0,0,3
+                            Size=328,598
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.PRankForm
+                            Name=PRankForm
+                            Pos=90,19,2
+                            Size=201,35
+                        }
+                        Image ^{
+                            Name=RankI
+                            Pos=190,52,1
+                            Size=94,30
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2NextRank
+                            Name=RankAdd
+                            Pos=193,58,0
+                            Size=20,20
+                        }
+                        Image ^{
+                            Name=RankI2
+                            Pos=190,52,1
+                            Size=94,33
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.NextPirateRank
+                            Name=RankAdd2
+                            Pos=193,27,0
+                            Size=20,20
+                        }
+                        Image ^{
+                            Name=CaptainI
+                            Pos=89,40,4
+                            Size=99,110
+                        }
+                        Image ^{
+                            Name=LifeLeft
+                            Pos=87,78,-1
+                            Size=6,35
+                        }
+                        Image ^{
+                            Name=LifeRight
+                            Pos=184,78,-1
+                            Size=6,35
+                        }
+                        Image ^{
+                            Image=GI,Bm.SB.2V1_UpH
+                            Pos=265,399,1
+                            Size=17,22
+                        }
+                        Image ^{
+                            Image=GI,Bm.SB.2V1_DownH
+                            Pos=265,520,1
+                            Size=17,22
+                        }
+                        Label ^{
+                            AlignX=Left
+                            AlignY=CenterEx
+                            Name=ShipName
+                            Pos=193,76,0
+                            Size=106,39
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Left
+                            AlignY=CenterEx
+                            Name=CharName
+                            Pos=193,119,0
+                            Size=106,22
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=120,383,0
+                            Size=133,30
+                            Text=FormShip.AddInfo
+                            TextColor=45,105,124
+                            WordWrap=True
+                        }
+                        Name=PanelRight
+                        Panel ^{
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=Skill0Add
+                                Pos=111,246,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=Skill1Add
+                                Pos=172,246,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=Skill2Add
+                                Pos=233,246,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=Skill3Add
+                                Pos=111,314,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=Skill4Add
+                                Pos=172,314,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=Skill5Add
+                                Pos=233,314,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=Skill0
+                                Pos=124,199,0
+                                Size=29,43
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=Skill1
+                                Pos=185,199,0
+                                Size=29,43
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=Skill2
+                                Pos=246,199,0
+                                Size=29,43
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=Skill3
+                                Pos=124,267,0
+                                Size=29,43
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=Skill4
+                                Pos=185,267,0
+                                Size=29,43
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=Skill5
+                                Pos=246,267,0
+                                Size=29,43
+                            }
+                            Label ^{
+                                AlignX=Center
+                                AlignY=CenterEx
+                                Font=Font.2Ranger
+                                Pos=118,173,0
+                                Size=135,15
+                                Text=FormShip.Skills
+                                TextColor=45,105,124
+                                WordWrap=True
+                            }
+                            Label ^{
+                                AlignX=Right
+                                AlignY=CenterEx
+                                Font=Font.2Ranger
+                                Name=TextPoints
+                                Pos=85,343,0
+                                Size=92,15
+                                Text=FormShip.Points
+                                TextColor=45,105,124
+                                WordWrap=True
+                            }
+                            Label ^{
+                                AlignX=Center
+                                AlignY=CenterEx
+                                Name=SkillFreePoints
+                                Pos=195,340,0
+                                Size=78,19
+                                Style=Style.Label.2Normal
+                                TextColor=0,0,0
+                            }
+                            Name=Skills
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=Skill0p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=Skill0n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=Skill0c
+                                Pos=124,199,-1
+                                Size=29,43
+                            }
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=Skill1p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=Skill1n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=Skill1c
+                                Pos=185,199,-1
+                                Size=29,43
+                            }
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=Skill2p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=Skill2n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=Skill2c
+                                Pos=246,199,-1
+                                Size=29,43
+                            }
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=Skill3p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=Skill3n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=Skill3c
+                                Pos=124,267,-1
+                                Size=29,43
+                            }
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=Skill4p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=Skill4n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=Skill4c
+                                Pos=185,267,-1
+                                Size=29,43
+                            }
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=Skill5p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=Skill5n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=Skill5c
+                                Pos=246,267,-1
+                                Size=29,43
+                            }
+                            Pos=0,0
+                            Size=328,598
+                            Zone ^{
+                                Kind=Rect
+                                Name=Skill0z
+                                Pos=95,199,0
+                                Size=58,65
+                            }
+                            Zone ^{
+                                Kind=Rect
+                                Name=Skill1z
+                                Pos=156,199,0
+                                Size=58,65
+                            }
+                            Zone ^{
+                                Kind=Rect
+                                Name=Skill2z
+                                Pos=217,199,0
+                                Size=58,65
+                            }
+                            Zone ^{
+                                Kind=Rect
+                                Name=Skill3z
+                                Pos=95,267,0
+                                Size=58,65
+                            }
+                            Zone ^{
+                                Kind=Rect
+                                Name=Skill4z
+                                Pos=156,267,0
+                                Size=58,65
+                            }
+                            Zone ^{
+                                Kind=Rect
+                                Name=Skill5z
+                                Pos=217,267,0
+                                Size=58,65
+                            }
+                        }
+                        PanelScrollBar ^{
+                            ActiveBarY=True
+                            ExternalSB=True
+                            MoveWorld=True
+                            Name=PanelAddInfo
+                            Pos=91,418,0
+                            PosAutoBarY=False
+                            RectBarY=265,399,282,542
+                            Size=168,126
+                            StyleBarY=Style.ScrollBar.2V1
+                            UnlimitedWorld=False
+                        }
+                        Pos=410,12
+                        Size=430,598
+                    }
+                    Panel ^{
+                        GraphButton ^{
+                            Help=FormShip.CloseHold
+                            ImageDown=GI,Bm.FormShip2.2RHCloseD
+                            ImageNormal=GI,Bm.FormShip2.2RHCloseN
+                            ImageNormalA=GI,Bm.FormShip2.2RHCloseA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=FromRH
+                            Pos=125,561,-1
+                            Size=69,37
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            ImageDown=GI,Bm.FormShip2.2CloseD
+                            ImageNormal=GI,Bm.FormShip2.2CloseN
+                            ImageNormalA=GI,Bm.FormShip2.2CloseA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=ExitRH
+                            Pos=206,560,1
+                            Size=68,39
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            ImageDisable=GI,Bm.FormShip2.2RHUpH
+                            ImageDown=GI,Bm.FormShip2.2RHUpD
+                            ImageNormal=GI,Bm.FormShip2.2RHUpN
+                            ImageNormalA=GI,Bm.FormShip2.2RHUpA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=UpRH
+                            Pos=301,274,-1
+                            Size=24,20
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            ImageDisable=GI,Bm.FormShip2.2RHDownH
+                            ImageDown=GI,Bm.FormShip2.2RHDownD
+                            ImageNormal=GI,Bm.FormShip2.2RHDownN
+                            ImageNormalA=GI,Bm.FormShip2.2RHDownA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=DownRH
+                            Pos=301,297,-1
+                            Size=24,19
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpLoadRocketsInHold
+                            ImageDown=GI,Bm.FormShip2.LoadRocketsInHoldD
+                            ImageNormal=GI,Bm.FormShip2.LoadRocketsInHoldN
+                            ImageNormalA=GI,Bm.FormShip2.LoadRocketsInHoldA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=LoadRocketsInHold
+                            Pos=81,526,-1
+                            Size=40,20
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpSellAllFromHold
+                            ImageDown=GI,Bm.FormShip2.SellAllFromHoldD
+                            ImageNormal=GI,Bm.FormShip2.SellAllFromHoldN
+                            ImageNormalA=GI,Bm.FormShip2.SellAllFromHoldA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=SellAllFromHold
+                            Pos=123,526,-1
+                            Size=40,20
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpSortType
+                            ImageDown=GI,Bm.FormShip2.2RHSortTypeD
+                            ImageNormal=GI,Bm.FormShip2.2RHSortTypeN
+                            ImageNormalA=GI,Bm.FormShip2.2RHSortTypeA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=SortTypeRH
+                            Pos=165,526,-1
+                            Size=40,20
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpSortSize
+                            ImageDown=GI,Bm.FormShip2.2RHSortSizeD
+                            ImageNormal=GI,Bm.FormShip2.2RHSortSizeN
+                            ImageNormalA=GI,Bm.FormShip2.2RHSortSizeA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=SortSizeRH
+                            Pos=207,526,-1
+                            Size=40,20
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpSortMoney
+                            ImageDown=GI,Bm.FormShip2.2RHSortMoneyD
+                            ImageNormal=GI,Bm.FormShip2.2RHSortMoneyN
+                            ImageNormalA=GI,Bm.FormShip2.2RHSortMoneyA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=SortMoneyRH
+                            Pos=249,526,-1
+                            Size=40,20
+                            Style=Style.GB.SoundNormal
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2RHBg
+                            Name=RHOpen
+                            Pos=0,0,2
+                            Size=328,598
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=154,27,0
+                            Size=68,21
+                            Text=FormShip.LHold
+                            TextColor=31,19,4
+                            TextShadow=1
+                            TextShadowColor=209,144,62
+                            WordWrap=True
+                        }
+                        Name=PanelRH
+                        Panel ^{
+                            Name=PanelItemRH
+                            Pos=82,59,-1
+                            Size=208,460
+                        }
+                        Pos=410,12
+                        Size=430,598
+                        _Label ^{
+                            AlignX=Right
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=80,525,0
+                            Size=82,20
+                            Text=FormShip.LSort
+                            TextColor=0,24,41
+                            TextShadow=1
+                            TextShadowColor=61,88,95
+                            WordWrap=True
+                        }
+                    }
+                    Pos=100,0,4
+                    Size=840,617
+                }
+                Pos=87,37,6
+                Size=964,650
+            }
+            Panel ^{
+                GAI ^{
+                    FrameLoad=0
+                    Image=Bm.FormShip2.2SC_Slot1
+                    Name=SC_Slot1_Anim
+                    Pos=10,154,6
+                    Size=145,42
+                }
+                GAI ^{
+                    FrameLoad=0
+                    Image=Bm.FormShip2.2SC_Slot3
+                    Name=SC_Slot3_Anim
+                    Pos=10,207,6
+                    Size=145,42
+                }
+                GAI ^{
+                    FrameLoad=0
+                    Image=Bm.FormShip2.2SC_Slot2
+                    Name=SC_Slot2_Anim
+                    Pos=10,260,6
+                    Size=145,42
+                }
+                GraphButton ^{
+                    ImageDown=GI,Bm.FormShip2.2SC_Slot1N
+                    ImageNormal=GI,Bm.FormShip2.2SC_Slot1N
+                    ImageNormalA=GI,Bm.FormShip2.2SC_Slot1A
+                    Kind=Normal
+                    KindHit=Rect
+                    Name=SC_Slot1_But
+                    Pos=10,154,8
+                    Size=145,42
+                }
+                GraphButton ^{
+                    ImageDown=GI,Bm.FormShip2.2SC_Slot3N
+                    ImageNormal=GI,Bm.FormShip2.2SC_Slot3N
+                    ImageNormalA=GI,Bm.FormShip2.2SC_Slot3A
+                    Kind=Normal
+                    KindHit=Rect
+                    Name=SC_Slot3_But
+                    Pos=10,207,8
+                    Size=145,42
+                }
+                GraphButton ^{
+                    ImageDown=GI,Bm.FormShip2.2SC_Slot2N
+                    ImageNormal=GI,Bm.FormShip2.2SC_Slot2N
+                    ImageNormalA=GI,Bm.FormShip2.2SC_Slot2A
+                    Kind=Normal
+                    KindHit=Rect
+                    Name=SC_Slot2_But
+                    Pos=10,260,8
+                    Size=145,42
+                }
+                GraphButton ^{
+                    ImageDisable=GI,Bm.FormShip2.2SC_RepareH
+                    ImageDown=GI,Bm.FormShip2.2SC_RepareD
+                    ImageNormal=GI,Bm.FormShip2.2SC_RepareN
+                    ImageNormalA=GI,Bm.FormShip2.2SC_RepareA
+                    Kind=Disable
+                    KindHit=Rect
+                    Name=SC_RepareFull_But
+                    Pos=122,119,3
+                    Size=22,18
+                    Style=Style.GB.SoundNormal
+                }
+                Image ^{
+                    Image=GI,Bm.FormShip2.2SC_Image
+                    Pos=0,0,5
+                    Size=168,318
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Ranger
+                    Pos=-39,51,0
+                    Size=250,40
+                    Text=FormShip.LSC
+                    TextColor=0,26,49
+                    TextShadow=1
+                    TextShadowColor=0,135,192
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Ranger
+                    Pos=-39,289,0
+                    Size=250,40
+                    Text=FormShip.LStorage
+                    TextColor=0,26,49
+                    TextShadow=1
+                    TextShadowColor=0,135,192
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Normal
+                    Name=SC_Slot1_Text
+                    Pos=10,152,7
+                    Size=145,42
+                    TextColor=52,231,255
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Normal
+                    Name=SC_Slot3_Text
+                    Pos=10,205,7
+                    Size=145,42
+                    TextColor=52,231,255
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Normal
+                    Name=SC_Slot2_Text
+                    Pos=10,258,7
+                    Size=145,42
+                    TextColor=52,231,255
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Normal
+                    Pos=10,96,4
+                    Size=145,20
+                    Text=FormShip.FullRepare
+                    TextColor=0,0,0
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Normal
+                    Name=FullRepareSum
+                    Pos=2,117,4
+                    Size=145,20
+                    TextColor=0,0,0
+                    WordWrap=True
+                }
+                Name=SC_Panel
+                Panel ^{
+                    Panel ^{
+                        GraphButton ^{
+                            ImageDisable=GI,Bm.FormShip2.2SC_UpH
+                            ImageDown=GI,Bm.FormShip2.2SC_UpD
+                            ImageNormal=GI,Bm.FormShip2.2SC_UpN
+                            ImageNormalA=GI,Bm.FormShip2.2SC_UpA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=SC_Up
+                            Pos=67,367,3
+                            Size=36,24
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            ImageDisable=GI,Bm.FormShip2.2SC_DownH
+                            ImageDown=GI,Bm.FormShip2.2SC_DownD
+                            ImageNormal=GI,Bm.FormShip2.2SC_DownN
+                            ImageNormalA=GI,Bm.FormShip2.2SC_DownA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=SC_Down
+                            Pos=67,367,3
+                            Size=36,24
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            ImageDisable=GI,Bm.FormShip2.2SC_StUpH
+                            ImageDown=GI,Bm.FormShip2.2SC_StUpD
+                            ImageNormal=GI,Bm.FormShip2.2SC_StUpN
+                            ImageNormalA=GI,Bm.FormShip2.2SC_StUpA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=Storage_Up
+                            Pos=144,61,3
+                            Size=11,15
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            ImageDisable=GI,Bm.FormShip2.2SC_StDownH
+                            ImageDown=GI,Bm.FormShip2.2SC_StDownD
+                            ImageNormal=GI,Bm.FormShip2.2SC_StDownN
+                            ImageNormalA=GI,Bm.FormShip2.2SC_StDownA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=Storage_Down
+                            Pos=144,341,3
+                            Size=11,15
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpStorageToShip
+                            ImageDown=GI,Bm.FormShip2.ToShipD
+                            ImageNormal=GI,Bm.FormShip2.ToShipN
+                            ImageNormalA=GI,Bm.FormShip2.ToShipA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=StorageToShip
+                            Pos=17,9,3
+                            Size=41,24
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpSellAllFromStorage
+                            ImageDown=GI,Bm.FormShip2.SellAllFromStorageD
+                            ImageNormal=GI,Bm.FormShip2.SellAllFromStorageN
+                            ImageNormalA=GI,Bm.FormShip2.SellAllFromStorageA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=SellAllFromStorage
+                            Pos=60,9,3
+                            Size=41,24
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpShipToStorage
+                            ImageDown=GI,Bm.FormShip2.ToStorageD
+                            ImageNormal=GI,Bm.FormShip2.ToStorageN
+                            ImageNormalA=GI,Bm.FormShip2.ToStorageA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=ShipToStorage
+                            Pos=103,9,3
+                            Size=41,24
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpSortType
+                            ImageDown=GI,Bm.FormShip2.SortStorageByTypeD
+                            ImageNormal=GI,Bm.FormShip2.SortStorageByTypeN
+                            ImageNormalA=GI,Bm.FormShip2.SortStorageByTypeA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=SortStorageByType
+                            Pos=17,35,3
+                            Size=41,24
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpSortSize
+                            ImageDown=GI,Bm.FormShip2.SortStorageBySizeD
+                            ImageNormal=GI,Bm.FormShip2.SortStorageBySizeN
+                            ImageNormalA=GI,Bm.FormShip2.SortStorageBySizeA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=SortStorageBySize
+                            Pos=60,35,3
+                            Size=41,24
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FormShip.HelpSortMoney
+                            ImageDown=GI,Bm.FormShip2.SortStorageByMoneyD
+                            ImageNormal=GI,Bm.FormShip2.SortStorageByMoneyN
+                            ImageNormalA=GI,Bm.FormShip2.SortStorageByMoneyA
+                            Kind=Disable
+                            KindHit=Rect
+                            Name=SortStorageByMoney
+                            Pos=103,35,3
+                            Size=41,24
+                            Style=Style.GB.SoundNormal
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SC_Storage
+                            Pos=0,0,5
+                            Size=168,428
+                        }
+                        Image ^{
+                            Name=Storage_0i
+                            Pos=16,60,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_1i
+                            Pos=59,60,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_2i
+                            Pos=102,60,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_3i
+                            Pos=16,103,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_4i
+                            Pos=59,103,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_5i
+                            Pos=102,103,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_6i
+                            Pos=16,146,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_7i
+                            Pos=59,146,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_8i
+                            Pos=102,146,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_9i
+                            Pos=16,189,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_10i
+                            Pos=59,189,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_11i
+                            Pos=102,189,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_12i
+                            Pos=16,232,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_13i
+                            Pos=59,232,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_14i
+                            Pos=102,232,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_15i
+                            Pos=16,275,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_16i
+                            Pos=59,275,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_17i
+                            Pos=102,275,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_18i
+                            Pos=16,318,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_19i
+                            Pos=59,318,0
+                            Size=39,39
+                        }
+                        Image ^{
+                            Name=Storage_20i
+                            Pos=102,318,0
+                            Size=39,39
+                        }
+                        Name=SC_Storage_Panel
+                        Pos=0,0,10
+                        Size=168,428
+                    }
+                    Pos=0,318,10
+                    Size=168,428
+                }
+                Pos=0,136,7
+                Size=168,746
+            }
+            Panel ^{
+                Name=TestHitPanels
+                Pos=0,0
+            }
+            Pos=0,0
+            ShrLight ^{
+                Pos=0,0,8
+                ShrLight=0
+                Size=1024,768
+            }
+            Size=1024,768
+            Window ^{
+                Active=False
+                GraphBuf ^{
+                    Name=InfoImage2
+                    Pos=12,10,8
+                    Size=43,43
+                }
+                Image ^{
+                    Name=EmRace
+                    Pos=195,118,8
+                    Size=35,35
+                }
+                Image ^{
+                    Name=InfoImage
+                    Pos=12,10,0
+                    Size=43,43
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2SmallBold
+                    Name=InfoName
+                    Pos=60,13,8
+                    Size=165,40
+                    TextColor=255,255,255
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Small
+                    Name=InfoText
+                    Pos=10,60,8
+                    Size=240,83
+                    TextColor=255,255,255
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Left
+                    AlignY=CenterEx
+                    Font=Font.2Normal
+                    Name=InfoSize
+                    Pos=49,118,8
+                    Size=45,33
+                    TextColor=255,255,255
+                }
+                Label ^{
+                    AlignX=Left
+                    AlignY=CenterEx
+                    Font=Font.2Normal
+                    Name=InfoPrice
+                    Pos=117,118,8
+                    Size=100,33
+                    TextColor=255,255,255
+                }
+                Name=PII
+                Panel ^{
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormNote.2BarLine
+                            Name=InfoDurable
+                            Pos=0,0
+                            Size=214,4
+                        }
+                        Pos=16,5,2
+                        Size=51,4
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormNote.2BarBack
+                            Name=InfoDurableBack
+                            Pos=0,0
+                            Size=210,4
+                        }
+                        Pos=16,5,3
+                        Size=51,4
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormNote.2BarTopLeft
+                            Name=InfoDurableLeft
+                            Pos=0,0
+                            Size=17,14
+                        }
+                        Pos=3,0,1
+                        Size=17,14
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormNote.2BarTopRight
+                            Name=InfoDurableRight
+                            Pos=0,0
+                            Size=227,14
+                        }
+                        Pos=50,0,1
+                        Size=84,14
+                    }
+                    Pos=60,2,11
+                    Size=84,14
+                }
+                Pos=10,10,5
+                Size=243,155
+                Style=Style.Window.2Item
+            }
+            Window ^{
+                Active=False
+                GraphBuf ^{
+                    Name=RankImage
+                    Pos=12,10,8
+                    Size=43,43
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2SmallBold
+                    Name=RankName
+                    Pos=60,10,8
+                    Size=165,43
+                    TextColor=57,239,255
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Small
+                    Name=RankText
+                    Pos=5,64,8
+                    Size=250,83
+                    TextColor=255,255,255
+                    WordWrap=True
+                }
+                Name=RankWnd
+                Pos=680,160,5
+                Size=260,174
+                Style=Style.Window.2Simple
+            }
+            Window ^{
+                Active=False
+                GraphBuf ^{
+                    Name=RewardImage
+                    Pos=12,10,8
+                    Size=43,43
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2SmallBold
+                    Name=RewardName
+                    Pos=60,10,8
+                    Size=165,43
+                    TextColor=57,239,255
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Small
+                    Name=RewardText
+                    Pos=5,64,8
+                    Size=250,83
+                    TextColor=255,255,255
+                    WordWrap=True
+                }
+                Name=RewardWnd
+                Pos=680,160,5
+                Size=260,174
+                Style=Style.Window.2Simple
+            }
+            Window ^{
+                Active=False
+                Image ^{
+                    Name=InfoHullEmRace
+                    Pos=340,125,8
+                    Size=35,35
+                }
+                Image ^{
+                    Name=InfoHullImage
+                    Pos=12,10,0
+                    Size=43,43
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2SmallBold
+                    Name=InfoHullName
+                    Pos=60,13,8
+                    Size=265,40
+                    TextColor=57,239,255
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Small
+                    Name=InfoHullText
+                    Pos=10,60,8
+                    Size=240,83
+                    TextColor=255,255,255
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Left
+                    AlignY=CenterEx
+                    Font=Font.2Normal
+                    Name=InfoHullSize
+                    Pos=167,134,8
+                    Size=58,31
+                    TextColor=255,255,255
+                }
+                Label ^{
+                    AlignX=Left
+                    AlignY=CenterEx
+                    Font=Font.2Normal
+                    Name=InfoHullPrice
+                    Pos=237,134,8
+                    Size=100,31
+                    TextColor=255,255,255
+                }
+                Name=InfoHull
+                Panel ^{
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_Bg
+                        Pos=0,0,9
+                        Size=80,90
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_Forsage
+                        Name=InfoHull_Forsage
+                        Pos=0,32
+                        Size=14,15
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_W1
+                        Name=InfoHull_W1
+                        Pos=16,19
+                        Size=16,13
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_W2
+                        Name=InfoHull_W2
+                        Pos=33,19
+                        Size=15,13
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_W3
+                        Name=InfoHull_W3
+                        Pos=48,19
+                        Size=18,13
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_W4
+                        Name=InfoHull_W4
+                        Pos=24,6
+                        Size=16,13
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_W5
+                        Name=InfoHull_W5
+                        Pos=41,6
+                        Size=15,13
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_A1
+                        Name=InfoHull_A1
+                        Pos=4,70
+                        Size=13,8
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_A2
+                        Name=InfoHull_A2
+                        Pos=65,70
+                        Size=11,8
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_A3
+                        Name=InfoHull_A3
+                        Pos=4,25
+                        Size=13,7
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_A4
+                        Name=InfoHull_A4
+                        Pos=64,25
+                        Size=12,7
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_Engine
+                        Name=InfoHull_Engine
+                        Pos=9,36
+                        Size=17,14
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_FuelTanks
+                        Name=InfoHull_FuelTanks
+                        Pos=9,52
+                        Size=17,14
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_Scaner
+                        Name=InfoHull_Scaner
+                        Pos=55,36
+                        Size=17,14
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_Radar
+                        Name=InfoHull_Radar
+                        Pos=55,52
+                        Size=17,14
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_RepairRobot
+                        Name=InfoHull_RepairRobot
+                        Pos=15,70
+                        Size=17,13
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_CargoHook
+                        Name=InfoHull_CargoHook
+                        Pos=33,70
+                        Size=15,13
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormNote.2HP_DefGenerator
+                        Name=InfoHull_DefGenerator
+                        Pos=48,70
+                        Size=18,13
+                    }
+                    Pos=22,68,7
+                    Size=80,90
+                }
+                Panel ^{
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormNote.2BarLine
+                            Name=InfoHullDurable
+                            Pos=0,0
+                            Size=213,4
+                        }
+                        Pos=16,5,2
+                        Size=51,4
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormNote.2BarBack
+                            Name=InfoHullDurableBack
+                            Pos=0,0
+                            Size=210,4
+                        }
+                        Pos=16,5,3
+                        Size=51,4
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormNote.2BarTopLeft
+                            Name=InfoHullDurableLeft
+                            Pos=0,0
+                            Size=17,14
+                        }
+                        Pos=3,0,1
+                        Size=17,14
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormNote.2BarTopRight
+                            Name=InfoHullDurableRight
+                            Pos=0,0
+                            Size=227,14
+                        }
+                        Pos=50,0,1
+                        Size=84,14
+                    }
+                    Pos=60,2,11
+                    Size=84,14
+                }
+                Pos=10,10,5
+                Size=383,168
+                Style=Style.Window.2Hull
+            }
+            XviD ^{
+                Name=Film
+                Pos=0,0,-1000
+                Size=1024,768
+            }
+        }
+        Sound ^{
+            Close=Sound.FormShipClose
+            Open=Sound.FormShipOpen
+        }
+    }
+}

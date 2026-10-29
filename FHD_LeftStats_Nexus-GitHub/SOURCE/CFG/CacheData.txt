@@ -1,0 +1,11 @@
+Bm ^{
+    FHD_LeftStats ^{
+        Frame=Mods\FHD_MODS\FHD_LeftStats\DATA\Image\Frame.gi
+        CloseN=Mods\FHD_MODS\FHD_LeftStats\DATA\Image\CloseN.gi
+        CloseA=Mods\FHD_MODS\FHD_LeftStats\DATA\Image\CloseA.gi
+        CloseD=Mods\FHD_MODS\FHD_LeftStats\DATA\Image\CloseD.gi
+        HoldN=Mods\FHD_MODS\FHD_LeftStats\DATA\Image\HoldN.gi
+        HoldA=Mods\FHD_MODS\FHD_LeftStats\DATA\Image\HoldA.gi
+        HoldD=Mods\FHD_MODS\FHD_LeftStats\DATA\Image\HoldD.gi
+    }
+}

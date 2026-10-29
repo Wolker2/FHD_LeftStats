@@ -1,0 +1,9 @@
+Name=FHD_LeftStats
+Section=FHD_MODS
+Author=FHD
+Dependence=
+Conflict=
+Priority=100
+Languages=Rus,Eng
+SmallDescription=Характеристики слева, трюм справа — 0.5 ALPHA
+FullDescription=Переносит панель характеристик игрока влево и отражает её рамку. Трюм остаётся справа. Тестовая сборка для SRHD 2.1.2500.

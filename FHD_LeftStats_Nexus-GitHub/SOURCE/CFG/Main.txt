@@ -1,0 +1,967 @@
+BV ^{
+    OnLoad ^{
+        FHD_LeftStats_Init ~{
+            01=InterfaceState('Ship','PanelRight',-1);
+            02=InterfaceState('Ship','PanelRH',-1);
+            03=InterfaceState('Ship','ToRH',-1);
+            04=InterfaceState('Ship','FromRH',-1);
+            05=InterfacePos('Ship','PanelRight',0,0,0);
+            06=InterfaceState('Ship','FHD_LeftStatsPanel',-1);
+            07=while(ShipFindCustomShipInfoByType(Player(),'FHD_LeftStats_01') >= 0) ShipDeleteCustomShipInfo(Player(),'FHD_LeftStats_01');
+            08=ShipAddCustomShipInfo(Player(),'FHD_LeftStats_01','NoShow');
+        }
+    }
+    OnStart ^{
+        FHD_LeftStats_Init ~{
+            01=InterfaceState('Ship','PanelRight',-1);
+            02=InterfaceState('Ship','PanelRH',-1);
+            03=InterfaceState('Ship','ToRH',-1);
+            04=InterfaceState('Ship','FromRH',-1);
+            05=InterfacePos('Ship','PanelRight',0,0,0);
+            06=InterfaceState('Ship','FHD_LeftStatsPanel',-1);
+            07=while(ShipFindCustomShipInfoByType(Player(),'FHD_LeftStats_01') >= 0) ShipDeleteCustomShipInfo(Player(),'FHD_LeftStats_01');
+            08=ShipAddCustomShipInfo(Player(),'FHD_LeftStats_01','NoShow');
+        }
+    }
+}
+ML ^{
+    Ship ^{
+        Panel ^{
+            Panel ^{
+            }
+            Panel ^{
+                Panel ^{
+                }
+                Panel ^{
+                }
+                Panel ^{
+                    Panel ^{
+                    }
+                    Panel ^{
+                        GAI ^{
+                            KindX=Center
+                            KindY=Center
+                            Name=FHD_Clipped_CaptainA
+                            PBuf=True
+                            Pos=46,40,4
+                            Size=99,110
+                            TransColor=255,0,255
+                        }
+                        GraphBuf ^{
+                            Name=FHD_Clipped_RewardsImg
+                            Pos=49,150,-1
+                            Size=190,22
+                        }
+                        GraphButton ^{
+                            ImageDown=GI,Bm.FHD_LeftStats.CloseD
+                            ImageNormal=GI,Bm.FHD_LeftStats.CloseN
+                            ImageNormalA=GI,Bm.FHD_LeftStats.CloseA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=FHD_Clipped_Exit
+                            Pos=54,560,1
+                            Size=68,39
+                            Style=Style.GB.SoundNormal
+                        }
+                        GraphButton ^{
+                            Help=FHD_LeftStats.BothPanels
+                            ImageDown=GI,Bm.FHD_LeftStats.HoldD
+                            ImageNormal=GI,Bm.FHD_LeftStats.HoldN
+                            ImageNormalA=GI,Bm.FHD_LeftStats.HoldA
+                            Kind=Normal
+                            KindHit=Rect
+                            Name=FHD_Clipped_FHD_StatsKeepOpen
+                            Pos=134,561,-1
+                            Size=69,37
+                            Style=Style.GB.SoundNormal
+                            OnPressCode ~{
+                                01=if(FormCurShip() != Player()) { ButtonClick('Ship','FromRH'); exit; }
+                                02=if(UICheckElement('Ship','PanelRight','IsActive')) ButtonClick('Ship','ToRH');
+                                03=InterfaceState('Ship','FHD_LeftStatsPanel',1);
+                            }
+                        }
+                        Image ^{
+                            Image=GI,Bm.FHD_LeftStats.Frame
+                            Name=FHD_Clipped_RightOpen
+                            Pos=0,0,3
+                            Size=328,598
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.PRankForm
+                            Name=FHD_Clipped_PRankForm
+                            Pos=47,19,2
+                            Size=201,35
+                        }
+                        Image ^{
+                            Name=FHD_Clipped_RankI
+                            Pos=147,52,1
+                            Size=94,30
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2NextRank
+                            Name=FHD_Clipped_RankAdd
+                            Pos=150,58,0
+                            Size=20,20
+                        }
+                        Image ^{
+                            Name=FHD_Clipped_RankI2
+                            Pos=147,52,1
+                            Size=94,33
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.NextPirateRank
+                            Name=FHD_Clipped_RankAdd2
+                            Pos=150,27,0
+                            Size=20,20
+                        }
+                        Image ^{
+                            Name=FHD_Clipped_CaptainI
+                            Pos=46,40,4
+                            Size=99,110
+                        }
+                        Image ^{
+                            Name=FHD_Clipped_LifeLeft
+                            Pos=44,78,-1
+                            Size=6,35
+                        }
+                        Image ^{
+                            Name=FHD_Clipped_LifeRight
+                            Pos=141,78,-1
+                            Size=6,35
+                        }
+                        Image ^{
+                            Image=GI,Bm.SB.2V1_UpH
+                            Pos=222,399,1
+                            Size=17,22
+                        }
+                        Image ^{
+                            Image=GI,Bm.SB.2V1_DownH
+                            Pos=222,520,1
+                            Size=17,22
+                        }
+                        Label ^{
+                            AlignX=Left
+                            AlignY=CenterEx
+                            Name=FHD_Clipped_ShipName
+                            Pos=150,76,0
+                            Size=106,39
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Left
+                            AlignY=CenterEx
+                            Name=FHD_Clipped_CharName
+                            Pos=150,119,0
+                            Size=106,22
+                            Style=Style.Label.2Normal
+                            TextColor=0,0,0
+                            WordWrap=True
+                        }
+                        Label ^{
+                            AlignX=Center
+                            AlignY=CenterEx
+                            Font=Font.2Ranger
+                            Pos=77,383,0
+                            Size=133,30
+                            Text=FormShip.AddInfo
+                            TextColor=45,105,124
+                            WordWrap=True
+                        }
+                        Name=FHD_Clipped_FHD_LeftStatsPanel
+                        Panel ^{
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=FHD_Clipped_Skill0Add
+                                Pos=111,246,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=FHD_Clipped_Skill1Add
+                                Pos=172,246,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=FHD_Clipped_Skill2Add
+                                Pos=233,246,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=FHD_Clipped_Skill3Add
+                                Pos=111,314,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=FHD_Clipped_Skill4Add
+                                Pos=172,314,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            GraphButton ^{
+                                ImageDown=GI,Bm.FormShip2.2SkillAddD
+                                ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                                ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                                Kind=Normal
+                                KindHit=Rect
+                                Name=FHD_Clipped_Skill5Add
+                                Pos=233,314,-1
+                                Size=18,18
+                                Style=Style.GB.SoundNormal
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=FHD_Clipped_Skill0
+                                Pos=124,199,0
+                                Size=29,43
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=FHD_Clipped_Skill1
+                                Pos=185,199,0
+                                Size=29,43
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=FHD_Clipped_Skill2
+                                Pos=246,199,0
+                                Size=29,43
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=FHD_Clipped_Skill3
+                                Pos=124,267,0
+                                Size=29,43
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=FHD_Clipped_Skill4
+                                Pos=185,267,0
+                                Size=29,43
+                            }
+                            Image ^{
+                                Image=GI,Bm.FormShip2.2SkillNormal
+                                KindX=Left
+                                Name=FHD_Clipped_Skill5
+                                Pos=246,267,0
+                                Size=29,43
+                            }
+                            Label ^{
+                                AlignX=Center
+                                AlignY=CenterEx
+                                Font=Font.2Ranger
+                                Pos=118,173,0
+                                Size=135,15
+                                Text=FormShip.Skills
+                                TextColor=45,105,124
+                                WordWrap=True
+                            }
+                            Label ^{
+                                AlignX=Right
+                                AlignY=CenterEx
+                                Font=Font.2Ranger
+                                Name=FHD_Clipped_TextPoints
+                                Pos=85,343,0
+                                Size=92,15
+                                Text=FormShip.Points
+                                TextColor=45,105,124
+                                WordWrap=True
+                            }
+                            Label ^{
+                                AlignX=Center
+                                AlignY=CenterEx
+                                Name=FHD_Clipped_SkillFreePoints
+                                Pos=195,340,0
+                                Size=78,19
+                                Style=Style.Label.2Normal
+                                TextColor=0,0,0
+                            }
+                            Name=FHD_Clipped_Skills
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill0p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill0n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=FHD_Clipped_Skill0c
+                                Pos=124,199,-1
+                                Size=29,43
+                            }
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill1p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill1n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=FHD_Clipped_Skill1c
+                                Pos=185,199,-1
+                                Size=29,43
+                            }
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill2p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill2n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=FHD_Clipped_Skill2c
+                                Pos=246,199,-1
+                                Size=29,43
+                            }
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill3p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill3n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=FHD_Clipped_Skill3c
+                                Pos=124,267,-1
+                                Size=29,43
+                            }
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill4p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill4n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=FHD_Clipped_Skill4c
+                                Pos=185,267,-1
+                                Size=29,43
+                            }
+                            Panel ^{
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillPositive
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill5p
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Image ^{
+                                    Image=GI,Bm.FormShip2.2SkillNegative
+                                    KindX=Left
+                                    Name=FHD_Clipped_Skill5n
+                                    Pos=0,0,0
+                                    Size=29,43
+                                }
+                                Name=FHD_Clipped_Skill5c
+                                Pos=246,267,-1
+                                Size=29,43
+                            }
+                            Pos=-43,0
+                            Size=328,598
+                            Zone ^{
+                                Kind=Rect
+                                Name=FHD_Clipped_Skill0z
+                                Pos=95,199,0
+                                Size=58,65
+                            }
+                            Zone ^{
+                                Kind=Rect
+                                Name=FHD_Clipped_Skill1z
+                                Pos=156,199,0
+                                Size=58,65
+                            }
+                            Zone ^{
+                                Kind=Rect
+                                Name=FHD_Clipped_Skill2z
+                                Pos=217,199,0
+                                Size=58,65
+                            }
+                            Zone ^{
+                                Kind=Rect
+                                Name=FHD_Clipped_Skill3z
+                                Pos=95,267,0
+                                Size=58,65
+                            }
+                            Zone ^{
+                                Kind=Rect
+                                Name=FHD_Clipped_Skill4z
+                                Pos=156,267,0
+                                Size=58,65
+                            }
+                            Zone ^{
+                                Kind=Rect
+                                Name=FHD_Clipped_Skill5z
+                                Pos=217,267,0
+                                Size=58,65
+                            }
+                        }
+                        PanelScrollBar ^{
+                            ActiveBarY=True
+                            ExternalSB=True
+                            MoveWorld=True
+                            Name=FHD_Clipped_PanelAddInfo
+                            Pos=48,418,0
+                            PosAutoBarY=False
+                            RectBarY=222,399,239,542
+                            Size=168,126
+                            StyleBarY=Style.ScrollBar.2V1
+                            UnlimitedWorld=False
+                        }
+                        Pos=-280,15
+                        Size=430,598
+                        Active=False
+                    }
+                    Panel ^{
+                        GraphButton ^{
+                            Name=FHD_HoldKeepOpen
+                            Help=FHD_LeftStats.BothPanels
+                            OnPressCode ~{
+                                01=if(FormCurShip() != Player()) { ButtonClick('Ship','FromRH'); exit; }
+                                02=if(UICheckElement('Ship','PanelRight','IsActive')) ButtonClick('Ship','ToRH');
+                                03=InterfaceState('Ship','FHD_LeftStatsPanel',1);
+                            }
+                        }
+                    }
+                    Panel ^{
+                        Name=PanelRight
+                        Pos=410,12
+                        Size=430,598
+                        GraphButton ^{
+                            Name=ToRH
+                            Active=False
+                            Kind=Normal
+                            KindHit=Rect
+                            Pos=0,0
+                            Size=1,1
+                        }
+                        GraphButton ^{
+                            Name=FromRH
+                            Active=False
+                            Kind=Normal
+                            KindHit=Rect
+                            Pos=0,0
+                            Size=1,1
+                        }
+                    }
+                }
+            }
+            Panel ^{
+            }
+            Panel ^{
+            }
+            Panel ^{
+                GAI ^{
+                    KindX=Center
+                    KindY=Center
+                    Name=CaptainA
+                    PBuf=True
+                    Pos=46,40,4
+                    Size=99,110
+                    TransColor=255,0,255
+                }
+                GraphBuf ^{
+                    Name=RewardsImg
+                    Pos=49,150,-1
+                    Size=190,22
+                }
+                GraphButton ^{
+                    ImageDown=GI,Bm.FHD_LeftStats.CloseD
+                    ImageNormal=GI,Bm.FHD_LeftStats.CloseN
+                    ImageNormalA=GI,Bm.FHD_LeftStats.CloseA
+                    Kind=Normal
+                    KindHit=Rect
+                    Name=Exit
+                    Pos=54,560,1
+                    Size=68,39
+                    Style=Style.GB.SoundNormal
+                }
+                GraphButton ^{
+                    Help=FHD_LeftStats.BothPanels
+                    ImageDown=GI,Bm.FHD_LeftStats.HoldD
+                    ImageNormal=GI,Bm.FHD_LeftStats.HoldN
+                    ImageNormalA=GI,Bm.FHD_LeftStats.HoldA
+                    Kind=Normal
+                    KindHit=Rect
+                    Name=FHD_StatsKeepOpen
+                    Pos=134,561,-1
+                    Size=69,37
+                    Style=Style.GB.SoundNormal
+                    OnPressCode ~{
+                        01=if(FormCurShip() != Player()) { ButtonClick('Ship','FromRH'); exit; }
+                        02=if(UICheckElement('Ship','PanelRight','IsActive')) ButtonClick('Ship','ToRH');
+                        03=InterfaceState('Ship','FHD_LeftStatsPanel',1);
+                    }
+                }
+                Image ^{
+                    Image=GI,Bm.FHD_LeftStats.Frame
+                    Name=RightOpen
+                    Pos=0,0,3
+                    Size=328,598
+                }
+                Image ^{
+                    Image=GI,Bm.FormShip2.PRankForm
+                    Name=PRankForm
+                    Pos=47,19,2
+                    Size=201,35
+                }
+                Image ^{
+                    Name=RankI
+                    Pos=147,52,1
+                    Size=94,30
+                }
+                Image ^{
+                    Image=GI,Bm.FormShip2.2NextRank
+                    Name=RankAdd
+                    Pos=150,58,0
+                    Size=20,20
+                }
+                Image ^{
+                    Name=RankI2
+                    Pos=147,52,1
+                    Size=94,33
+                }
+                Image ^{
+                    Image=GI,Bm.FormShip2.NextPirateRank
+                    Name=RankAdd2
+                    Pos=150,27,0
+                    Size=20,20
+                }
+                Image ^{
+                    Name=CaptainI
+                    Pos=46,40,4
+                    Size=99,110
+                }
+                Image ^{
+                    Name=LifeLeft
+                    Pos=44,78,-1
+                    Size=6,35
+                }
+                Image ^{
+                    Name=LifeRight
+                    Pos=141,78,-1
+                    Size=6,35
+                }
+                Image ^{
+                    Image=GI,Bm.SB.2V1_UpH
+                    Pos=222,399,1
+                    Size=17,22
+                }
+                Image ^{
+                    Image=GI,Bm.SB.2V1_DownH
+                    Pos=222,520,1
+                    Size=17,22
+                }
+                Label ^{
+                    AlignX=Left
+                    AlignY=CenterEx
+                    Name=ShipName
+                    Pos=150,76,0
+                    Size=106,39
+                    Style=Style.Label.2Normal
+                    TextColor=0,0,0
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Left
+                    AlignY=CenterEx
+                    Name=CharName
+                    Pos=150,119,0
+                    Size=106,22
+                    Style=Style.Label.2Normal
+                    TextColor=0,0,0
+                    WordWrap=True
+                }
+                Label ^{
+                    AlignX=Center
+                    AlignY=CenterEx
+                    Font=Font.2Ranger
+                    Pos=77,383,0
+                    Size=133,30
+                    Text=FormShip.AddInfo
+                    TextColor=45,105,124
+                    WordWrap=True
+                }
+                Name=FHD_LeftStatsPanel
+                Panel ^{
+                    GraphButton ^{
+                        ImageDown=GI,Bm.FormShip2.2SkillAddD
+                        ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                        ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                        Kind=Normal
+                        KindHit=Rect
+                        Name=Skill0Add
+                        Pos=111,246,-1
+                        Size=18,18
+                        Style=Style.GB.SoundNormal
+                    }
+                    GraphButton ^{
+                        ImageDown=GI,Bm.FormShip2.2SkillAddD
+                        ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                        ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                        Kind=Normal
+                        KindHit=Rect
+                        Name=Skill1Add
+                        Pos=172,246,-1
+                        Size=18,18
+                        Style=Style.GB.SoundNormal
+                    }
+                    GraphButton ^{
+                        ImageDown=GI,Bm.FormShip2.2SkillAddD
+                        ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                        ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                        Kind=Normal
+                        KindHit=Rect
+                        Name=Skill2Add
+                        Pos=233,246,-1
+                        Size=18,18
+                        Style=Style.GB.SoundNormal
+                    }
+                    GraphButton ^{
+                        ImageDown=GI,Bm.FormShip2.2SkillAddD
+                        ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                        ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                        Kind=Normal
+                        KindHit=Rect
+                        Name=Skill3Add
+                        Pos=111,314,-1
+                        Size=18,18
+                        Style=Style.GB.SoundNormal
+                    }
+                    GraphButton ^{
+                        ImageDown=GI,Bm.FormShip2.2SkillAddD
+                        ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                        ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                        Kind=Normal
+                        KindHit=Rect
+                        Name=Skill4Add
+                        Pos=172,314,-1
+                        Size=18,18
+                        Style=Style.GB.SoundNormal
+                    }
+                    GraphButton ^{
+                        ImageDown=GI,Bm.FormShip2.2SkillAddD
+                        ImageNormal=GI,Bm.FormShip2.2SkillAddN
+                        ImageNormalA=GI,Bm.FormShip2.2SkillAddA
+                        Kind=Normal
+                        KindHit=Rect
+                        Name=Skill5Add
+                        Pos=233,314,-1
+                        Size=18,18
+                        Style=Style.GB.SoundNormal
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormShip2.2SkillNormal
+                        KindX=Left
+                        Name=Skill0
+                        Pos=124,199,0
+                        Size=29,43
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormShip2.2SkillNormal
+                        KindX=Left
+                        Name=Skill1
+                        Pos=185,199,0
+                        Size=29,43
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormShip2.2SkillNormal
+                        KindX=Left
+                        Name=Skill2
+                        Pos=246,199,0
+                        Size=29,43
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormShip2.2SkillNormal
+                        KindX=Left
+                        Name=Skill3
+                        Pos=124,267,0
+                        Size=29,43
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormShip2.2SkillNormal
+                        KindX=Left
+                        Name=Skill4
+                        Pos=185,267,0
+                        Size=29,43
+                    }
+                    Image ^{
+                        Image=GI,Bm.FormShip2.2SkillNormal
+                        KindX=Left
+                        Name=Skill5
+                        Pos=246,267,0
+                        Size=29,43
+                    }
+                    Label ^{
+                        AlignX=Center
+                        AlignY=CenterEx
+                        Font=Font.2Ranger
+                        Pos=118,173,0
+                        Size=135,15
+                        Text=FormShip.Skills
+                        TextColor=45,105,124
+                        WordWrap=True
+                    }
+                    Label ^{
+                        AlignX=Right
+                        AlignY=CenterEx
+                        Font=Font.2Ranger
+                        Name=TextPoints
+                        Pos=85,343,0
+                        Size=92,15
+                        Text=FormShip.Points
+                        TextColor=45,105,124
+                        WordWrap=True
+                    }
+                    Label ^{
+                        AlignX=Center
+                        AlignY=CenterEx
+                        Name=SkillFreePoints
+                        Pos=195,340,0
+                        Size=78,19
+                        Style=Style.Label.2Normal
+                        TextColor=0,0,0
+                    }
+                    Name=Skills
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillPositive
+                            KindX=Left
+                            Name=Skill0p
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillNegative
+                            KindX=Left
+                            Name=Skill0n
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Name=Skill0c
+                        Pos=124,199,-1
+                        Size=29,43
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillPositive
+                            KindX=Left
+                            Name=Skill1p
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillNegative
+                            KindX=Left
+                            Name=Skill1n
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Name=Skill1c
+                        Pos=185,199,-1
+                        Size=29,43
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillPositive
+                            KindX=Left
+                            Name=Skill2p
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillNegative
+                            KindX=Left
+                            Name=Skill2n
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Name=Skill2c
+                        Pos=246,199,-1
+                        Size=29,43
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillPositive
+                            KindX=Left
+                            Name=Skill3p
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillNegative
+                            KindX=Left
+                            Name=Skill3n
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Name=Skill3c
+                        Pos=124,267,-1
+                        Size=29,43
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillPositive
+                            KindX=Left
+                            Name=Skill4p
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillNegative
+                            KindX=Left
+                            Name=Skill4n
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Name=Skill4c
+                        Pos=185,267,-1
+                        Size=29,43
+                    }
+                    Panel ^{
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillPositive
+                            KindX=Left
+                            Name=Skill5p
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Image ^{
+                            Image=GI,Bm.FormShip2.2SkillNegative
+                            KindX=Left
+                            Name=Skill5n
+                            Pos=0,0,0
+                            Size=29,43
+                        }
+                        Name=Skill5c
+                        Pos=246,267,-1
+                        Size=29,43
+                    }
+                    Pos=-43,0
+                    Size=328,598
+                    Zone ^{
+                        Kind=Rect
+                        Name=Skill0z
+                        Pos=95,199,0
+                        Size=58,65
+                    }
+                    Zone ^{
+                        Kind=Rect
+                        Name=Skill1z
+                        Pos=156,199,0
+                        Size=58,65
+                    }
+                    Zone ^{
+                        Kind=Rect
+                        Name=Skill2z
+                        Pos=217,199,0
+                        Size=58,65
+                    }
+                    Zone ^{
+                        Kind=Rect
+                        Name=Skill3z
+                        Pos=95,267,0
+                        Size=58,65
+                    }
+                    Zone ^{
+                        Kind=Rect
+                        Name=Skill4z
+                        Pos=156,267,0
+                        Size=58,65
+                    }
+                    Zone ^{
+                        Kind=Rect
+                        Name=Skill5z
+                        Pos=217,267,0
+                        Size=58,65
+                    }
+                }
+                PanelScrollBar ^{
+                    ActiveBarY=True
+                    ExternalSB=True
+                    MoveWorld=True
+                    Name=PanelAddInfo
+                    Pos=48,418,0
+                    PosAutoBarY=False
+                    RectBarY=222,399,239,542
+                    Size=168,126
+                    StyleBarY=Style.ScrollBar.2V1
+                    UnlimitedWorld=False
+                }
+                Pos=-93,52,7
+                Size=328,598
+                Active=True
+                PosAutoCorrection=True
+                PosAutoCorrectionXCoef=0.5
+                PosAutoCorrectionYCoef=0.5
+            }
+        }
+    }
+}

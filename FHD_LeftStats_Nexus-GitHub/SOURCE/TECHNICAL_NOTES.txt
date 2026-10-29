@@ -1,0 +1,71 @@
+FHD_LeftStats 0.5: first-entry and draw-order correction
+
+Reference: supplied vanilla CFG/Main.dat, CFG/CacheData.dat, DATA/forms.pkg;
+BV=2.1.2500. Original Rangers.exe SHA256:
+83300344af802bc51e64389c58f047e5afdf195c133048098be3881fae29ed98
+
+Regression 1: first entry
+PanelRH has no explicit Active field, so it starts True, while the native cargo
+mode byte (FormShip+0x4a4) starts False. In 0.4 the entry callback checked
+!PanelRH.IsActive, skipped ToRH on the first opening, then native Ship.Enter
+(0x6d771e..0x6d78fc) hid cargo. On reopening, the same guard finally invoked
+ToRH. This reproduces the user's first-open/second-open difference.
+0.5 checks PanelRight.IsActive positively instead. The dummy native statistics
+tab defaults True and remains True in statistics mode, so it correctly causes
+ToRH on the first entry. The native handler sets mode=True, hides the dummy,
+and opens cargo. Subsequent entries see the dummy inactive and do not toggle.
+Entry callbacks precede native tab layout: 0x6d6786..0x6d6793 dispatches event
+0x18; the tab layout below 0x6d771e reads the resulting mode byte.
+The event's script expression is evaluated by the probe, not by a full RScript VM.
+
+Regression 2: draw order
+In 0.4 root statistics had Pos=-93,52,10. That incorrectly added old ancestor
+Z values. Native sibling insertion at 0x4c96c8 sorts Z per parent, descending;
+native draw traversal at 0x4cac4c paints that list forward. Thus root Z10 was
+painted before BGBuf Z9 and covered by the background. This was missing from
+earlier visibility/bounds-only checks. 0.5 sets root Z7, between background Z9
+and equipment root Z6. Child-relative layers remain unchanged.
+verify_native_lifecycle.py runs the actual insertion, rectangle intersection,
+and forward draw traversal, stubbing only leaf paint calls. It checks root
+paint order, not final pixels or the whole renderer.
+
+Placement retained from 0.4
+Real statistics: ML.Ship.Panel:0.Panel:4, direct child of fullscreen MainPanel.
+Native init at 0x6d4a1f sizes MainPanel to the actual VM dimensions.
+Pos=-93,52,7; Size=328,598; Active=True; PosAutoCorrection=True;
+PosAutoCorrectionXCoef=0.5; PosAutoCorrectionYCoef=0.5.
+At 1920x1080, correction adds (448,156): frame=(355,208,683,806).
+The old nested subtree remains inactive and every old Name is prefixed
+FHD_Clipped_ to retain unique native bindings in the new real subtree.
+Root Panel occurrences 0..3 remain PanelMain, equipment layout, SC_Panel,
+TestHitPanels. Cargo/equipment ancestors and positions are not moved.
+The real independent statistics are not native PanelRight, so native cargo
+switching does not hide them. Native PanelRight remains an empty compatible
+anchor with hidden ToRH/FromRH buttons bound by original game initialization.
+Visible box buttons use the same mode guard; no native binary patch is used.
+
+Migration and images
+Bootstrap clears obsolete native visibility/position overrides and replaces
+the hidden callback info so it initializes from current language DAT. Leaving
+clears the custom statistics override (-1) rather than hiding its default.
+The original frame/buttons are horizontally reflected. Inner art/controls
+shift -43px and stay readable. Only opaque decorative rim pixels are sampled
+from the reference; no scene, portrait or dynamic labels are baked in.
+Cargo resources and item bindings remain original.
+
+Checks
+verify_native_lifecycle.py: both regressions fail on 0.4, pass on 0.5.
+Native cargo callback 0x6f50e8 and entry-layout slice 0x6d771e..0x6d78fc
+are exercised for first entry, two reopenings and an item-update reentry,
+using the actual default CFG Active state and each language's entry guard.
+verify_draw_bounds.py: merged ancestor bounds and target position at 1920x1080.
+verify.py: DAT roundtrips, GI pixels, measured control alignment.
+verify_dual_panels.py: unique native bindings and unchanged cargo/equipment.
+verify_native_switch.py: original open-hold callback preserves independent stats.
+Native probes have an EXE SHA256 guard. No executable/DLL bytes are distributed.
+
+Limits
+Actual game rendering, script VM, callback-info installation and input were not
+executed. The probes isolate the native UI behavior with test object methods.
+Default visibility may also expose statistics in nonplayer Ship contexts;
+those contexts, small resolutions and other UI mods remain unverified.
