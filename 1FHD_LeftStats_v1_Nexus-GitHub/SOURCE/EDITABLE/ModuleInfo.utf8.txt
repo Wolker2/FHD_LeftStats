@@ -1,0 +1,14 @@
+Name=FHD_LeftStats
+Section=FHD_MODS
+Author=Prolog_D
+Dependence=
+Conflict=FHD_Nanotech
+Priority=100
+Languages=Rus,Eng
+SmallDescription=одновременное открытие и трюма и информаций пилота
+FullDescription= одновременное открытие и трюма и информаций пилота трюм справа, статистика слева.
+SmallDescription=------------------------------------  <color=0,200,255>ENG</color>  ----------------------------------------
+FullDescription=------------------------------------  <color=0,200,255>ENG</color>  ----------------------------------------
+Languages=Eng,Rus
+SmallDescription=Allows the cargo hold and pilot information panels to be opened simultaneously.
+FullDescription=Allows the cargo hold and pilot information panels to be displayed simultaneously, with the cargo hold on the right and pilot statistics on the left.

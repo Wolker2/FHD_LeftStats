@@ -1,0 +1,176 @@
+{
+  "format": "blockpar",
+  "seed": 1369621460,
+  "root": {
+    "entries": [
+      {
+        "kind": "block",
+        "name": "FHD_LeftStats",
+        "value": {
+          "entries": [
+            {
+              "kind": "parameter",
+              "name": "BothPanels",
+              "value": "Character statistics and cargo hold are both open",
+              "sort_meta": [
+                0,
+                1
+              ]
+            }
+          ],
+          "sorted": true
+        },
+        "sort_meta": [
+          0,
+          1
+        ]
+      },
+      {
+        "kind": "block",
+        "name": "ShipInfo",
+        "value": {
+          "entries": [
+            {
+              "kind": "block",
+              "name": "AddInfo",
+              "value": {
+                "entries": [
+                  {
+                    "kind": "block",
+                    "name": "CustomInfos",
+                    "value": {
+                      "entries": [
+                        {
+                          "kind": "block",
+                          "name": "FHD_LeftStats_01",
+                          "value": {
+                            "entries": [
+                              {
+                                "kind": "parameter",
+                                "name": "Description",
+                                "value": "",
+                                "sort_meta": [
+                                  0,
+                                  1
+                                ]
+                              },
+                              {
+                                "kind": "parameter",
+                                "name": "Icon",
+                                "value": "0",
+                                "sort_meta": [
+                                  0,
+                                  1
+                                ]
+                              },
+                              {
+                                "kind": "parameter",
+                                "name": "Name",
+                                "value": "",
+                                "sort_meta": [
+                                  0,
+                                  1
+                                ]
+                              },
+                              {
+                                "kind": "block",
+                                "name": "OnActCode",
+                                "value": {
+                                  "entries": [
+                                    {
+                                      "kind": "parameter",
+                                      "name": "01",
+                                      "value": "if(CurrentForm() != 'Ship') exit;"
+                                    },
+                                    {
+                                      "kind": "parameter",
+                                      "name": "02",
+                                      "value": "if(ScriptItemActionType(t_OnLeavingForm))"
+                                    },
+                                    {
+                                      "kind": "block",
+                                      "name": "03",
+                                      "value": {
+                                        "entries": [
+                                          {
+                                            "kind": "parameter",
+                                            "name": "01",
+                                            "value": "InterfaceState('Ship','FHD_LeftStatsPanel',-1);"
+                                          },
+                                          {
+                                            "kind": "parameter",
+                                            "name": "02",
+                                            "value": "exit;"
+                                          }
+                                        ],
+                                        "sorted": false
+                                      }
+                                    },
+                                    {
+                                      "kind": "parameter",
+                                      "name": "04",
+                                      "value": "if(FormCurShip() != Player()) exit;"
+                                    },
+                                    {
+                                      "kind": "parameter",
+                                      "name": "05",
+                                      "value": "if(UICheckElement('Ship','PanelRight','IsActive')) ButtonClick('Ship','ToRH');"
+                                    },
+                                    {
+                                      "kind": "parameter",
+                                      "name": "06",
+                                      "value": "InterfaceState('Ship','FHD_LeftStatsPanel',1);"
+                                    }
+                                  ],
+                                  "sorted": false
+                                },
+                                "sort_meta": [
+                                  0,
+                                  1
+                                ]
+                              },
+                              {
+                                "kind": "parameter",
+                                "name": "OnActCodeTypes",
+                                "value": "t_OnEnteringForm,t_OnReEnteringForm,t_OnLeavingForm",
+                                "sort_meta": [
+                                  0,
+                                  1
+                                ]
+                              }
+                            ],
+                            "sorted": true
+                          },
+                          "sort_meta": [
+                            0,
+                            1
+                          ]
+                        }
+                      ],
+                      "sorted": true
+                    },
+                    "sort_meta": [
+                      0,
+                      1
+                    ]
+                  }
+                ],
+                "sorted": true
+              },
+              "sort_meta": [
+                0,
+                1
+              ]
+            }
+          ],
+          "sorted": true
+        },
+        "sort_meta": [
+          0,
+          1
+        ]
+      }
+    ],
+    "sorted": true
+  }
+}

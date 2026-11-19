@@ -1,0 +1,68 @@
+{
+  "mod": "FHD_LeftStats",
+  "source_archive": "FHD_LeftStats_v1.zip",
+  "archive_sha256": "ff682da589037aaa79bbd15a2f8f50430d4974a5f5ee432f1c148930295391a2",
+  "archive_file_count": 13,
+  "original_files_in_source": 13,
+  "text_or_code_files": 1,
+  "byte_exact_DAT_to_JSON": 4,
+  "png_files": 8,
+  "data_loss_in_original_archive": false,
+  "dll_source_recovered_from_compiled_binary": false,
+  "game_tested": false,
+  "warnings": [],
+  "files": {
+    "Mods/FHD_MODS/FHD_LeftStats/CFG/CacheData.dat": {
+      "size": 199,
+      "sha256": "b667ccb2a4b876b834c23f716e2b4c0250547bfb8f9f26d20ac4e18511a58244"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/CFG/Eng/Lang.dat": {
+      "size": 454,
+      "sha256": "b470ba895e4bdc8ba04c65a5c75b208b4dcbe8d4657fec15c5ac028f19de8323"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/CFG/Main.dat": {
+      "size": 3583,
+      "sha256": "7393547b68bd036a838e358f4738ea7c50f75283a44769f947f3470218dcf5b4"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/CFG/Rus/Lang.dat": {
+      "size": 462,
+      "sha256": "5aa8de79cf3583668dc6afa9f5c498140eba85acdd1e6cec50be44c9169bfc11"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/DATA/Image/CargoBackgroundMirrored.gi": {
+      "size": 784672,
+      "sha256": "766c4d07805fd2d6a27297bf7a318672b36f423c54ec043578c520d08a1e92c6"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/DATA/Image/CloseA.gi": {
+      "size": 10704,
+      "sha256": "ba8931dc75ad574fa7427b7bb31ed05b68cb9b427d0eb41c9911c9a428c25afb"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/DATA/Image/CloseD.gi": {
+      "size": 10704,
+      "sha256": "e0602969b87a8ce5d5c754d9e2edfa1c02ff3e91d4cf28cbf508f95cc560029c"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/DATA/Image/CloseN.gi": {
+      "size": 10704,
+      "sha256": "c61bb50d49226ffab6fd36a7387188133c507170fdfd41d31cbc626a6c648caa"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/DATA/Image/Frame.gi": {
+      "size": 784672,
+      "sha256": "3b61d645f1e493009c0577a59f2fc122f66c973827ef0bab21d0f1385d701230"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/DATA/Image/HoldA.gi": {
+      "size": 10308,
+      "sha256": "fcf31b598c08dabeabf481759fa4b0d094b090b5387f5320949009f7ed18faee"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/DATA/Image/HoldD.gi": {
+      "size": 10308,
+      "sha256": "6139699641636d8732dc96eea044c2e3a5e3a23a460d06bd33af6028ef54ef45"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/DATA/Image/HoldN.gi": {
+      "size": 10308,
+      "sha256": "63d1337c324ce242d8af77516b350ab431a23d08fdc6cf0908005ec32dd572e2"
+    },
+    "Mods/FHD_MODS/FHD_LeftStats/ModuleInfo.txt": {
+      "size": 815,
+      "sha256": "e7ca8889ddf20097da4471ac694a7eefd2e5495d4f7ab9b9abc855bec7e4ee99"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "format": "cachedata",
+  "seed": 1369621460,
+  "root": {
+    "entries": [
+      {
+        "kind": "block",
+        "name": "Bm",
+        "value": {
+          "entries": [
+            {
+              "kind": "block",
+              "name": "FHD_LeftStats",
+              "value": {
+                "entries": [
+                  {
+                    "kind": "parameter",
+                    "name": "CargoBackgroundMirrored",
+                    "value": "Mods\\FHD_MODS\\FHD_LeftStats\\DATA\\Image\\CargoBackgroundMirrored.gi"
+                  },
+                  {
+                    "kind": "parameter",
+                    "name": "CloseA",
+                    "value": "Mods\\FHD_MODS\\FHD_LeftStats\\DATA\\Image\\CloseA.gi"
+                  },
+                  {
+                    "kind": "parameter",
+                    "name": "CloseD",
+                    "value": "Mods\\FHD_MODS\\FHD_LeftStats\\DATA\\Image\\CloseD.gi"
+                  },
+                  {
+                    "kind": "parameter",
+                    "name": "CloseN",
+                    "value": "Mods\\FHD_MODS\\FHD_LeftStats\\DATA\\Image\\CloseN.gi"
+                  },
+                  {
+                    "kind": "parameter",
+                    "name": "Frame",
+                    "value": "Mods\\FHD_MODS\\FHD_LeftStats\\DATA\\Image\\Frame.gi"
+                  },
+                  {
+                    "kind": "parameter",
+                    "name": "HoldA",
+                    "value": "Mods\\FHD_MODS\\FHD_LeftStats\\DATA\\Image\\HoldA.gi"
+                  },
+                  {
+                    "kind": "parameter",
+                    "name": "HoldD",
+                    "value": "Mods\\FHD_MODS\\FHD_LeftStats\\DATA\\Image\\HoldD.gi"
+                  },
+                  {
+                    "kind": "parameter",
+                    "name": "HoldN",
+                    "value": "Mods\\FHD_MODS\\FHD_LeftStats\\DATA\\Image\\HoldN.gi"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
